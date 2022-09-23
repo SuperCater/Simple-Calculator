@@ -1,5 +1,5 @@
-const { calculate } = require("../modules/calculator.cjs")
-const { calculatorData } = require("../modules/calculatorData.cjs")
+const { calculate } = require("../modules/calculator.js")
+const { calculatorData } = require("../modules/calculatorData.js")
 
 let number = 5  // Set this to the first number
 let number2 = 4 // Set this to the second number

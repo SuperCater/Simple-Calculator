@@ -2,8 +2,6 @@ const calculate = (value1, value2, calculateType, CEQ) => {
     if (CEQ !== "disabled") {
       return CEQ
     } else if (CEQ === 'disabled') {
-      return ""
-    } else {
       if (typeof value1 === "number" && typeof value2 === "number") {
         if (typeof calculateType === "string") {
           if (calculateType === "multiply") {
