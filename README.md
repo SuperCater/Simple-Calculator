@@ -17,6 +17,7 @@ number2 | Second number in the equation [number]
 type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent"]
 
 ## Advanced options
+* commas | Seperate numbers by commas
 * Custom Equation | Allows you to input a custom equation. [Custom Equation, "disabled"]
 * FrameworkLogging | Allows you to see when frameworks are loaded. Mainly for debugging. [True, False]
 * errorReporter | Will log any errors that occur to the console. [True, False]
