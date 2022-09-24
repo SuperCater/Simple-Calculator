@@ -1,46 +1,81 @@
+const { acceptedValues, options } = require("../main.js");
 
-const calculate = (value1, value2, calculateType, CEQ, fType) => {
-  if (fType) {
-    if (calculate && value1 && value2 && calculateType) {
-      console.log(`Calculator framework loaded in succesfully! With number 1: ${value1}, number 2: ${value2}, and type: ${calculateType}`); 
-  if (CEQ !== "disabled") {
+const valueChecker = (chValue1, chValue2, chType) => {
+  if (
+    typeof chValue1 === "number" &&
+    typeof chValue2 === "number" &&
+    acceptedValues.includes(chType)
+  ) {
+    return true;
+  } else {
+    console.error(
+      "Values have incorrect types. Please make sure they are correct."
+    );
+  }
+};
+
+const calculate = (cValue1, cValue2, cType) => {
+  let result = 0;
+  switch (cType) {
+    case "add":
+      result = cValue1 + cValue2;
+      break;
+    case "subtract":
+      result = cValue1 - cValue2;
+      break;
+    case "multiply":
+      result = cValue1 * cValue2;
+      break;
+    case "divide":
+      result = cValue1 / cValue2;
+      break;
+    case "exponent":
+      result = cValue1 ** cValue2;
+      break;
+    case "remainder":
+      result = cValue1 % cValue2;
+      break;
+    case "debug":
+      let debugValue1 = cValue1.toString();
+      let debugValue2 = cValue2.toString();
+
+      return `Calculator ran with value1: ${debugValue1}, value2: ${debugValue2}, and type: ${cType}`;
+  }
+  return result;
+};
+
+const calculateCEQ = (CEQ) => {
+  if (typeof CEQ === "number") {
     return CEQ;
-  } else if (CEQ === "disabled") {
-    if (typeof value1 === "number" && typeof value2 === "number") {
-      if (typeof calculateType === "string") {
-        if (calculateType === "multiply") {
-          return value1 * value2;
-        } else if (calculateType === "divide") {
-          return value1 / value2;
-        } else if (calculateType === "add") {
-          return value1 + value2;
-        } else if (calculateType === "subtract") {
-          return value1 - value2;
-        } else if (calculateType === "exponent") {
-          return value1 ** value2;
-        } else if (calculateType === "debug") {
-          return calculateType, value1, value2;
-        } else if (calculateType !== acceptedValues && errorReporter) {
-          console.error(
-            "Type must be multiply, divide, subtract, add, or exponent. If you are sure this is correct please try using the debug command."
-          );
-        } else {
-          return "";
-        }
-      } else if (typeof type !== "string" && errorReporter) {
-        console.error("type must be string");
-      }
+  }
+};
+
+const frameworkLogger = () => {
+  if (options.frameworkLogging) {
+    return true;
+  } else if (!options.frameworkLogging) {
+    return false;
+  }
+};
+
+const calculator = (value1, value2, type, CEQ) => {
+  if (frameworkLogger) {
+    console.log("Calculator loaded succesfully");
+  }
+
+  if (valueChecker(value1, value2, type)) {
+    if (typeof calculateCEQ(CEQ) === "number") {
+      return calculate(CEQ);
     } else {
-      console.error("Values must be numbers");
+      return calculate(value1, value2, type);
     }
   }
-} else {
-  console.error(
-    "Something has failed to load. Please make sure every variable has a value or use the debugging function"
-  );
-}
-}
-}
+};
 
-
-module.exports.calculate = calculate;
+module.exports = {
+  valueChecker,
+  calculate,
+  calculateCEQ,
+  frameworkLogger,
+  calculator,
+};

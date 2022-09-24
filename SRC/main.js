@@ -1,6 +1,6 @@
-let number = 2; // Set this to the first number
-let number2 = 20; // Set this to the second number
-let type = "exponent"; // Set this to the type of math
+let number = 10; // Set this to the first number
+let number2 = 9; // Set this to the second number
+let type = "debug"; // Set this to the type of math
 
 // Advanced
 let commas = true; // Should numbers be split every 3 numbers by commass
@@ -19,10 +19,11 @@ const acceptedValues = [
   "subtract",
   "exponent",
   "debug",
+  "remainder",
 ];
 
 // Exports
-module.exports.options = {
+const options = {
   number: number,
   number2: number2,
   type: type,
@@ -34,28 +35,38 @@ module.exports.options = {
   reverseValues: reverseValues,
   autoLowerCase: autoLowerCase,
 };
+
+module.exports = { acceptedValues, options };
 // Imports
 
-const { calculate } = require("./modules/calculator.js");
+const {
+  valueChecker,
+  frameworkLogger,
+  calculate,
+  calculateCEQ,
+  calculator,
+} = require("./modules/calculator.js");
 const { calculatorData } = require("./modules/calculatorData.js");
 const { debug } = require("./modules/debug.js");
 
 if (autoLowerCase) {
   type = type.toLowerCase();
 }
-// calculation (convert to switch statement soon)
+
+// Commas function
 const numberWithCommaTranslator = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
-if (numberWithCommaTranslator) {
+// Calcation, check module for more information.
+if (commas) {
   console.log(
-    numberWithCommaTranslator(
-      calculate(number, number2, type, customEquation, frameworkLogging)
-    )
+    numberWithCommaTranslator(calculator(number, number2, type, customEquation))
   );
-} else if (!numberWithCommaTranslator) {
-  console.log(calculate(number, number2, type, CEQ, frameworkLogging));
+} else if (!commas) {
+  console.log(calculator(number, number2, type, customEquation));
+} else {
+  console.error("Please set commas to true or false");
 }
 
 // Debugging tools
