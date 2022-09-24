@@ -1,5 +1,5 @@
 {"name": "simplecalculator",
-"version": "0.8.2",
+"version": "0.8.5",
 "description": "A simple calculator",
 "main": "SRC/main.js",
 "dependencies": {
