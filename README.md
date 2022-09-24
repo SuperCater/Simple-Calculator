@@ -7,6 +7,7 @@ This project is a simple calculator that has multiple types of operation such as
   * Multiplication
   * Division
   * Exponential
+  * Remainder
   
 There is a custom equation system in the words allowing to input your own equations.
 
