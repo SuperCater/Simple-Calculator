@@ -26,6 +26,7 @@ const { debug } = require("./modules/debug.js");
 
 if (options.autoLowerCase) {
   options.type = options.type.toLowerCase();
+  options;
 }
 
 // Commas function
@@ -41,7 +42,8 @@ if (options.commas) {
         options.number,
         options.number2,
         options.type,
-        options.customEquation
+        options.customEquation,
+        options.secondaryType
       )
     )
   );
@@ -51,7 +53,8 @@ if (options.commas) {
       options.number,
       options.number2,
       options.type,
-      options.customEquation
+      options.customEquation,
+      options.secondaryType
     )
   );
 } else {
