@@ -1,4 +1,5 @@
-const { acceptedValues, options } = require("../main.js");
+const { acceptedValues } = require("../main.js");
+const { options } = require("../options.js");
 
 const valueChecker = (chValue1, chValue2, chType) => {
   if (
