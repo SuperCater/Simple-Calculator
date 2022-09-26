@@ -8,7 +8,7 @@ const valueChecker = (chValue1, chValue2, chType) => {
     acceptedValues.includes(chType)
   ) {
     return true;
-  } else {
+  } else if (!options.multipleValues) {
     console.error(
       "Values have incorrect types. Please make sure they are correct."
     );
@@ -86,10 +86,22 @@ const calculator = (value1, value2, type, CEQ) => {
   if (valueChecker(value1, value2, type)) {
     if (typeof calculateCEQ(CEQ) === "number") {
       return calculate(CEQ);
-    } else {
+    } else if (!options.multipleValues && type !== "add") {
       return calculate(value1, value2, type);
+    } else {
+      console.error("All error checks have missed an error. Error is unkown.");
     }
+  } else if (options.multipleValues && type === "add") {
+    return multipleValuesCalculator(value1);
   }
+};
+
+const multipleValuesCalculator = (mValue) => {
+  result = mValue.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    0
+  );
+  return result;
 };
 
 module.exports = {
@@ -98,4 +110,5 @@ module.exports = {
   calculateCEQ,
   frameworkLogger,
   calculator,
+  multipleValuesCalculator,
 };

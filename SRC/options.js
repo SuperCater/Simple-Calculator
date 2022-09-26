@@ -1,7 +1,7 @@
 // Once you've set all the values to what you want to run just type "npm run calculate" or "node ./SRC/main.js"
 
 // Values
-let number = 2; // Set this to the first number
+let number = [5, 4, 7]; // Set this to the first number
 let number2 = 2; // Set this to the second number
 let type = "add"; // Set this to the type of math
 
@@ -19,8 +19,8 @@ let enableSecondaryType = false; // If this is true it enables the secondary typ
 let secondaryType = "square root"; // Set the secondary type. (Suports built in Math functions.)
 let secondaryMathFunctions = false; // Enables standard JS math functions. Enable this if you are using
 let customEquation = "disabled"; // Input the custom equation (WIP)
-
 let reverseValues = false; // WIP (Does nothing at the moment.)
+let multipleValues = true; // Requires you to use the number variable and set it to an array. Will allow you to use mutliple values in an equation. ONLY WORKS WITH ADDITION.
 
 const options = {
   number: number,
@@ -36,6 +36,7 @@ const options = {
   debugType: debugType,
   reverseValues: reverseValues,
   autoLowerCase: autoLowerCase,
+  multipleValues: multipleValues,
 };
 
 module.exports = { options };
