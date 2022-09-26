@@ -84,6 +84,13 @@ const calculator = (value1, value2, type, CEQ) => {
   }
 
   if (valueChecker(value1, value2, type)) {
+    if (options.reverseValues) {
+      let reverseValuesArray = reverseValuesFunc(value1, value2);
+
+      value1 = reverseValuesArray[0];
+      value2 = reverseValuesArray[1];
+    }
+
     if (typeof calculateCEQ(CEQ) === "number") {
       return calculate(CEQ);
     } else if (!options.multipleValues && type !== "add") {
@@ -102,6 +109,10 @@ const multipleValuesCalculator = (mValue) => {
     0
   );
   return result;
+};
+
+const reverseValuesFunc = (sValue1, sValue2) => {
+  return [sValue2, sValue1];
 };
 
 module.exports = {
