@@ -11,14 +11,14 @@ const stringToNumber = (str) => {
     return str
 }
 
-// Add commas to a numbers
-const addCommas = (num) => {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 // lowercase
 const lowerCase = (str) => {
     return str.toLowerCase()
+}
+
+// Add commas to a number
+const addCommas = (num) => {
+    return num.toLocaleString()
 }
 
 // exports the functions to be used in other files
