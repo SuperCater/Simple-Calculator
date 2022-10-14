@@ -1,33 +1,38 @@
 // Importing Modules
-const { stringToNumber } = require("./utils");
+const { stringToNumber, addCommas } = require("./utils");
+const { options } = require("../options.js");
 
 
 const calculate = (operator, ...values) => {
     values = stringToNumber(values);
-
     let result = values[0];
     switch (operator) {
-      case "add":
+      case "add": case '+':
         result = add(values);
-        return result;
-      case "subtract":
+        break;
+      case "subtract": case '-':
         result = subtract(values);
-        return result;
-      case "multiply":
+        break;
+      case "multiply": case '*':
         result = multiply(values);
-        return result
-      case "divide":
+        break;
+      case "divide": case '/':
         result = divide(values);
-        return result;
-      case "remainder":
+        break;
+      case "remainder": case '%':
         result = remainder(values);
-        return result;
-      case "exponent":
+        break;
+      case "exponent": case '**':
         console.warn("Be careful as exponents can quickly go above the max supported value!")
         result = exponent(values);
-        return result;
+        break;
       default:
         return "Invalid operator";
+    }
+    if (options.advanced.commas) {
+      return addCommas(result);
+    } else {
+      return result
     }
 };
 
@@ -78,6 +83,8 @@ const exponent = (values) => {
   }
   return eResult;
 };
+
+
 
 
 
