@@ -1,12 +1,15 @@
-{"name": "simplecalculator",
-"version": "0.9.4",
-"description": "A simple calculator",
-"main": "SRC/main.js",
-"dependencies": {
-    "node": "^18.9.0",
+{
+  "name": "simplecalculator",
+  "version": "0.1.0 - PREVIEW",
+  "description": "A simple calculator",
+  "main": "SRC/main.js",
+  "dependencies": {
+    "node": "^18.10.0",
     "node.js": "^0.0.1-security"
   },
-"scripts": {
-  "calculate": "node ./SRC/main.js"
-}
+  "scripts": {
+    "calculate": "node ./SRC/main.js",
+    "ctest": "node ./SRC/modules/calculate.js",
+    "utils": "node ./SRC/modules/utils.js"
+  }
 }
