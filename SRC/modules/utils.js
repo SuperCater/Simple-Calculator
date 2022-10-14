@@ -11,6 +11,13 @@ const stringToNumber = (str) => {
     return str
 }
 
+// Add commas to a numbers
+const addCommas = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+console.log(addCommas(5432345))
+
 // exports the functions to be used in other files
-module.exports = { stringToNumber };
+module.exports = { stringToNumber, addCommas };
 

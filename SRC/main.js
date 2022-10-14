@@ -1,4 +1,4 @@
-const options = require("./options.js");
+const { options } = require("./options.js");
 const { calculate } = require("./modules/calculate.js");
 
 
