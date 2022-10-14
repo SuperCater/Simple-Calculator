@@ -16,6 +16,11 @@ const addCommas = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+// lowercase
+const lowerCase = (str) => {
+    return str.toLowerCase()
+}
+
 // exports the functions to be used in other files
-module.exports = { stringToNumber, addCommas };
+module.exports = { stringToNumber, addCommas, lowerCase };
 
