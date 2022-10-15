@@ -17,6 +17,7 @@ This project is a simple calculator that has multiple types of operation such as
   * Division
   * Exponential
   * Remainder
+  # Tax
 
 ## Values
 type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "remainder"]
@@ -24,6 +25,7 @@ type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "
 option | Description
 commas | Have numbers separated by commas. [true, false]
 lowercase | Have the operator auto to lowercase. [true, false]
+debugMode | Shows some debugging information. [true, false]
 
 # Contributing
 If you want to contribute to this project, please make a pull request and I will review it.
