@@ -12,6 +12,10 @@ if (options.advanced.lowercase) {
     options.operator = lowerCase(options.operator);
 }
 
+if (options.operator === "tax" && options.values.length > 2) {
+    console.warn("Only the first 2 values inputted will be used for the tax calculator.");
+}
+
 if (options.advanced.debugMode) {
     console.log("Values before calculation!")
     debug(options)
@@ -25,5 +29,5 @@ if (options.operator === "tax"){
 
 if (options.advanced.debugMode) {
     console.log("Values after calculation!")
-    debug(options)
+    debug(options, version)
 }
