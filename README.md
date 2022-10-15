@@ -5,6 +5,7 @@ The code has just recently been rewritten so quite a couple of features are miss
 A simple calculator that can use multiple types of operations and accepts infinite values (or well till the program runs out of memory)
 
 # How to run:
+0. Install Node.js [here](https://nodejs.org/en/) // Both should work!
 1. Open your chosen command prompt
 2. Change directory to SimpleCalculator
 3. type npm run calculate [type] [...values]
