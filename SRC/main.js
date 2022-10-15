@@ -17,7 +17,11 @@ if (options.advanced.debugMode) {
     debug(options)
 }
 
-console.log(calculate(options.operator, ...options.values));
+if (options.operator === "tax"){
+    console.table(calculate(options.operator, options.values[0], options.values[1]));
+} else {
+    console.log(calculate(options.operator, ...options.values));
+}
 
 if (options.advanced.debugMode) {
     console.log("Values after calculation!")

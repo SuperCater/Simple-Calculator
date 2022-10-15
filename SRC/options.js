@@ -13,7 +13,7 @@ const proccess  = require('process')
 /*
  ! DO NOT USE
  TODO: Stop node from exiting whenever this is changed.
- ? Won't matter whenever I have a GUI
+ ? Won't matter whenever I add a GUI
 const changeOptions = (key, value) => {
   switch(key) {
     case 'commas':

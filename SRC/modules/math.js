@@ -46,4 +46,31 @@ const exponent = (values) => {
   return eResult;
 };
 
-module.exports = { add, subtract, multiply, divide, remainder, exponent };
+const taxCalculator = (amount, taxRate) => {
+  let tResult = {
+    taxAmount: 0,
+    totalAmount: 0,
+  };
+  if (typeof taxRate === "string") {
+    if (taxRate.includes("%")) {
+      taxRate = parseFloat(taxRate) / 100;
+    }
+  }
+  if (taxRate > 1) {
+    tResult.taxAmount = amount * (taxRate / 100);
+  } else {
+    tResult.taxAmount = amount * taxRate;
+  }
+  tResult.totalAmount = amount + tResult.taxAmount;
+  return tResult;
+};
+
+module.exports = {
+  add,
+  subtract,
+  multiply,
+  divide,
+  remainder,
+  exponent,
+  taxCalculator,
+};
