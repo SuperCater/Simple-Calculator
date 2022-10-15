@@ -65,6 +65,11 @@ const taxCalculator = (amount, taxRate) => {
   return tResult;
 };
 
+const squareMath = (value) => {
+  let sMResult = Math.sqrt(value);
+  return sMResult;
+};
+
 module.exports = {
   add,
   subtract,
@@ -73,4 +78,5 @@ module.exports = {
   remainder,
   exponent,
   taxCalculator,
+  squareMath,
 };

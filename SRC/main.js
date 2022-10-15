@@ -8,6 +8,10 @@ if (process.argv[2] === "change") {
     changeOptions(process.argv[3], process.argv[4]);
 }
 
+if (options.values.length === 0) {
+    throw new Error("No values were provided!");
+}
+
 if (options.advanced.lowercase) {
     options.operator = lowerCase(options.operator);
 }

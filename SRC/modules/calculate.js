@@ -1,7 +1,7 @@
 // Importing Modules
 const { stringToNumber, addCommas } = require("./utils");
 const { options } = require("../options.js");
-const { add, subtract, multiply, divide, remainder, exponent, taxCalculator } = require("./math");
+const { add, subtract, multiply, divide, remainder, exponent, taxCalculator, squareMath } = require("./math");
 
 
 const calculate = (operator, ...values) => {
@@ -29,6 +29,9 @@ const calculate = (operator, ...values) => {
         break;
       case "tax":
         return taxCalculator(values[0], values[1]);
+      case "square":
+        result = squareMath(values[0]);
+        break;
       default:
         return "Invalid operator";
     }
