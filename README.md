@@ -21,7 +21,7 @@ This project is a simple calculator that has multiple types of operation such as
   * Radius | Returns the radius of a circle
 
 ## Values
-type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "remainder", "tax", "square"]
+type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "remainder", "tax", "square", "circumference", "radius"]
 ## Options
 * option | Description
 * commas | Have numbers separated by commas. [true, false]
