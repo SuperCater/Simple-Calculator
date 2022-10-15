@@ -18,7 +18,7 @@ This project is a simple calculator that has multiple types of operation such as
   * Division
   * Exponential
   * Remainder
-  # Tax
+  * Tax
 
 ## Values
 type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "remainder"]
