@@ -8,6 +8,9 @@ const proccess  = require('process')
     lowercase: true, // Converts the operator to lowercase.
     debugMode: false, // Enables debug mode.
   },
+  secret: {
+    aprilFools: false, // Enables April Fools mode.
+  }
 };
 
 /*

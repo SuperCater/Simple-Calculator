@@ -2,7 +2,16 @@ const { options } = require("./options.js");
 const { calculate } = require("./modules/calculate.js");
 const { lowerCase} = require("./modules/utils.js");
 const { debug } = require("./modules/debug.js");
-const { version } = require("../package.json");
+const { version } = require("../package.json"); 
+
+if (options.secret.aprilFools) {
+    console.log(69420)
+    process.exit()
+}
+
+if (options.values[0] === "69" && options.values[1] === "420") {
+    console.log("Hahaha funny number")
+}
 
 if (process.argv[2] === "change") {
     changeOptions(process.argv[3], process.argv[4]);
