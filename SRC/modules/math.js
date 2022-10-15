@@ -1,4 +1,5 @@
 const mathTypes = {
+  // Loops through Numbers and does the type of mather operation on them.
   add(values) {
     let aResult = values[0];
     for (let i = 1; i < values.length; i++) {
@@ -45,7 +46,7 @@ const mathTypes = {
     }
     return eResult;
 },
-
+  // Calculates tax by multiplying 2 numbers to get the tax amount and then adding that to the initial amount returning a table that has the tax and total.
   taxCalculator(amount, taxRate) {
     let tResult = {
       taxAmount: 0,
@@ -64,17 +65,17 @@ const mathTypes = {
     tResult.totalAmount = amount + tResult.taxAmount;
     return tResult;
 },
-
+  // Finds the square root of a number.
   squareMath(value) {
     let sMResult = Math.sqrt(value);
     return sMResult;
 },
-
+  // Finds the circumference of a circle.
   circumference(radius) {
     let cfResult = 2 * Math.PI * radius;
     return cfResult;
 },
-
+  // Finds the radius of a circle.
   radius(circumference) {
     let rResult = circumference / (2 * Math.PI);
     return rResult;
