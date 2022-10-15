@@ -1,7 +1,7 @@
 // Importing Modules
 const { stringToNumber, addCommas } = require("./utils");
 const { options } = require("../options.js");
-const { add, subtract, multiply, divide, remainder, exponent, taxCalculator, squareMath } = require("./math");
+const { mathTypes } = require("./math");
 
 
 const calculate = (operator, ...values) => {
@@ -9,28 +9,34 @@ const calculate = (operator, ...values) => {
     let result = values[0];
     switch (operator) {
       case "add": case '+':
-        result = add(values);
+        result = mathTypes.add(values);
         break;
       case "subtract": case '-':
-        result = subtract(values);
+        result = mathTypes.subtract(values);
         break;
       case "multiply": case '*':
-        result = multiply(values);
+        result = mathTypes.multiply(values);
         break;
       case "divide": case '/':
-        result = divide(values);
+        result = mathTypes.divide(values);
         break;
       case "remainder": case '%':
-        result = remainder(values);
+        result = mathTypes.remainder(values);
         break;
       case "exponent": case '**':
         console.warn("Be careful as exponents can quickly go above the max supported value!")
-        result = exponent(values);
+        result = mathTypes.exponent(values);
         break;
       case "tax":
-        return taxCalculator(values[0], values[1]);
+        return mathTypes.taxCalculator(values[0], values[1]);
       case "square":
-        result = squareMath(values[0]);
+        result = mathTypes.squareMath(values[0]);
+        break;
+      case "circumference":
+        result = mathTypes.circumference(values[0]);
+        break;
+      case "radius":
+        result = mathTypes.radius(values[0]);
         break;
       default:
         return "Invalid operator";
