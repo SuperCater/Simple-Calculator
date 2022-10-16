@@ -2,10 +2,10 @@
 const stringToNumber = (str) => {
     if (typeof str === 'object') { // This will cause issues if a regular object is passed and not an array.
         for (let i = 0; i < str.length; i++) {
-            str[i] = Number(str[i])
+            str[i] = parseFloat(str[i])
         }
     } else {
-        str = Number(str)
+        str = parseFloat(str)
     }
 
     return str

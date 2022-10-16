@@ -52,11 +52,6 @@ const mathTypes = {
       taxAmount: 0,
       totalAmount: 0,
     };
-    if (typeof taxRate === "string") {
-      if (taxRate.includes("%")) {
-        taxRate = parseFloat(taxRate) / 100;
-      }
-    }
     if (taxRate > 1) {
       tResult.taxAmount = amount * (taxRate / 100);
     } else {
