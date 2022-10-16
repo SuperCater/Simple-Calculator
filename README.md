@@ -19,9 +19,12 @@ This project is a simple calculator that has multiple types of operation such as
   * Square | Returns the square root of a number
   * Circumference | Returns the circumference of a circle
   * Radius | Returns the radius of a circle
+  * SquareArea | Returns the area of a square
+  * CircleArea | Returns the area of a circle
+  * Random | Gives a specified amount of values a random number that you can specify. [max, amount]
 
 ## Values
-type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "remainder", "tax", "square", "circumference", "radius"]
+type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "remainder", "tax", "square", "circumference", "radius", "squarearea", "circlearea", "random"]
 ## Options
 * option | Description
 * commas | Have numbers separated by commas. [true, false]

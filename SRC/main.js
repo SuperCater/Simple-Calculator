@@ -1,8 +1,13 @@
 const { options } = require("./options.js");
 const { calculate } = require("./modules/calculate.js");
-const { lowerCase} = require("./modules/utils.js");
+const { lowerCase, random } = require("./modules/utils.js");
 const { debug } = require("./modules/debug.js");
 const { version } = require("../package.json"); 
+const operatorInfo = require("./modules/operatorInfo.js");
+
+if (options.operator === "random") {
+    random(options.values[0], options.values[1]);
+}
 
 if (options.secret.aprilFools) {
     console.log(69420)
@@ -13,9 +18,11 @@ if (options.values[0] === "69" && options.values[1] === "420") {
     console.log("Hahaha funny number")
 }
 
-if (process.argv[2] === "change") {
+/*
+    TODO: Heavily WIP
+ if (process.argv[2] === "change") {
     changeOptions(process.argv[3], process.argv[4]);
-}
+} */
 
 if (options.values.length === 0) {
     throw new Error("No values were provided!");
@@ -25,8 +32,12 @@ if (options.advanced.lowercase) {
     options.operator = lowerCase(options.operator);
 }
 
-if (options.operator === "tax" && options.values.length > 2) {
-    console.warn("Only the first 2 values inputted will be used for the tax calculator.");
+if (options.values.length > 0) {
+if (operatorInfo[options.operator].maxValues < options.values.length) {
+    console.warn("You inputed more values than the calculation requires. The extra values will be ignored.");
+}
+} else {
+    throw new Error("No values were provided!");
 }
 
 if (options.advanced.debugMode) {

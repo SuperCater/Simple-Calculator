@@ -38,6 +38,12 @@ const calculate = (operator, ...values) => {
       case "radius":
         result = mathTypes.radius(values[0]);
         break;
+      case "circlearea":
+        result = mathTypes.circleArea(values[0]);
+        break;
+      case "squarearea":
+        result = mathTypes.squareArea(values[0]);
+        break;
       default:
         return "Invalid operator";
     }

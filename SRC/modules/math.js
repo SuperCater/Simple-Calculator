@@ -6,14 +6,14 @@ const mathTypes = {
       aResult += values[i];
     }
     return aResult;
-},
+  },
   subtract(values) {
     let sResult = values[0];
     for (let i = 1; i < values.length; i++) {
       sResult -= values[i];
     }
     return sResult;
-},
+  },
 
   multiply(values) {
     let mResult = values[0];
@@ -21,7 +21,7 @@ const mathTypes = {
       mResult *= values[i];
     }
     return mResult;
-},
+  },
 
   divide(values) {
     let dResult = values[0];
@@ -29,7 +29,7 @@ const mathTypes = {
       dResult /= values[i];
     }
     return dResult;
-},
+  },
 
   remainder(values) {
     let rResult = values[0];
@@ -37,7 +37,7 @@ const mathTypes = {
       rResult %= values[i];
     }
     return rResult;
-},
+  },
 
   exponent(values) {
     let eResult = values[0];
@@ -45,7 +45,7 @@ const mathTypes = {
       eResult **= values[i];
     }
     return eResult;
-},
+  },
   // Calculates tax by multiplying 2 numbers to get the tax amount and then adding that to the initial amount returning a table that has the tax and total.
   taxCalculator(amount, taxRate) {
     let tResult = {
@@ -59,22 +59,30 @@ const mathTypes = {
     }
     tResult.totalAmount = amount + tResult.taxAmount;
     return tResult;
-},
+  },
   // Finds the square root of a number.
   squareMath(value) {
     let sMResult = Math.sqrt(value);
     return sMResult;
-},
+  },
   // Finds the circumference of a circle.
   circumference(radius) {
     let cfResult = 2 * Math.PI * radius;
     return cfResult;
-},
+  },
   // Finds the radius of a circle.
   radius(circumference) {
     let rResult = circumference / (2 * Math.PI);
     return rResult;
-},
+  },
+  circleArea(radius) {
+    let cResult = Math.PI * radius ** 2;
+    return cResult;
+  },
+  squareArea(side) {
+    let saResult = side ** 2;
+    return saResult;
+  },
 };
 
 module.exports = { mathTypes };
