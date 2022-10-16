@@ -8,6 +8,7 @@ A simple calculator that can use multiple types of operations and accepts infini
 3. type npm run calculate [type] [...values]
 4. If you want to access options go to simplecalculator/src/options.js and change the options to true or false.
 
+# Operations:
 This project is a simple calculator that has multiple types of operation such as:
   * Addition
   * Subtraction
@@ -22,9 +23,12 @@ This project is a simple calculator that has multiple types of operation such as
   * SquareArea | Returns the area of a square
   * CircleArea | Returns the area of a circle
   * Random | Gives a specified amount of values a random number that you can specify. [max, amount]
+  * Delete | Deletes the savedata file
 
+# Saved Data:
+The project has a saved data .txt fil e that can be found in simplecalculator/src/data/savedata.txt. This file is updated everytime the project runs resulting in the ability to refer to the data later on.
 ## Values
-type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "remainder", "tax", "square", "circumference", "radius", "squarearea", "circlearea", "random"]
+type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "remainder", "tax", "square", "circumference", "radius", "squarearea", "circlearea", "random", "delete"]
 ## Options
 * option | Description
 * commas | Have numbers separated by commas. [true, false]
@@ -36,6 +40,7 @@ type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "
 If you want to contribute to this project, please make a pull request and I will review it.
 
 # Coming Soon
+* Pulling data from the .txt file
 * Website version
 * Options can be changed with the CLI
 * A script to auto open the terminal for easier use.

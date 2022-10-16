@@ -77,6 +77,12 @@ const operatorInfo = {
     description: "Generates random numbers.",
     maxValues: 2, // Provides more but the input it self is limited to 2.
   },
+  delete: {
+    name: "delete",
+    symbol: "delete",
+    description: "Deletes your data file",
+    maxValues: 0,
+  },
 };
 
 module.exports = operatorInfo;

@@ -25,15 +25,14 @@ if (options.values[0] === "69" && options.values[1] === "420") {
     changeOptions(process.argv[3], process.argv[4]);
 } */
 
-if (options.values.length === 0) {
-  throw new Error("No values were provided!");
-}
-
 if (options.advanced.lowercase) {
   options.operator = lowerCase(options.operator);
 }
 
-if (options.values.length > 0) {
+if (
+  options.values.length > 0 ||
+  operatorInfo[options.operator].maxValues === 0
+) {
   if (operatorInfo[options.operator].maxValues < options.values.length) {
     console.warn(
       "You inputed more values than the calculation requires. The extra values will be ignored."
@@ -49,17 +48,18 @@ if (options.advanced.debugMode) {
 }
 
 let finalResult;
-
-if (options.operator === "tax") {
-  finalResult = calculate(
-    options.operator,
-    options.values[0],
-    options.values[1]
-  );
-  console.log(finalResult);
-} else {
-  finalResult = calculate(options.operator, ...options.values);
-  console.log(finalResult);
+if (options.operator !== "delete") {
+  if (options.operator === "tax") {
+    finalResult = calculate(
+      options.operator,
+      options.values[0],
+      options.values[1]
+    );
+    console.log(finalResult);
+  } else {
+    finalResult = calculate(options.operator, ...options.values);
+    console.log(finalResult);
+  }
 }
 
 if (options.advanced.debugMode) {
@@ -70,17 +70,16 @@ if (options.advanced.debugMode) {
 const fs = require("fs");
 const path = "SRC/data/savedCalculations.txt";
 
-/*
-if (!fs.existsSync(path)) {
-    fs.writeFile('savedCalculations.txt',
-    `Answer ${finalResult} using ${options.values} with type ${options.operator}\n`,
-    function (err) {
-        if (err) throw err;
-        console.log('Saved!');
+if (options.operator === "delete") {
+  fs.unlink(path, (err) => {
+    if (err) {
+      console.error(err);
+      return;
     }
-    );
-} */
-
+    console.log("File deleted successfully");
+  });
+}
+if (options.operator !== "delete") {
 fs.appendFile(
   path,
   `Answer ${finalResult} using ${options.values} with type ${options.operator}\n`,
@@ -89,3 +88,4 @@ fs.appendFile(
     console.log("Saved!");
   }
 );
+}
