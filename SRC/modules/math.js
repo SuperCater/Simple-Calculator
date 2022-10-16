@@ -1,3 +1,5 @@
+const { evaluate } = require('mathjs');
+
 const mathTypes = {
   // Loops through Numbers and does the type of mather operation on them.
   add(values) {

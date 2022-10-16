@@ -2,6 +2,7 @@
 const { stringToNumber, addCommas } = require("./utils");
 const { options } = require("../options.js");
 const { mathTypes } = require("./math");
+const { evaluate } = require("mathjs");
 
 
 const calculate = (operator, ...values) => {
