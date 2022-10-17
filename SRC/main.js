@@ -1,6 +1,6 @@
 const { options } = require("./options.js");
 const { calculate } = require("./modules/calculate.js");
-const { lowerCase, random } = require("./modules/utils.js");
+const { lowerCase, random, savingDataNormal } = require("./modules/utils.js");
 const { debug } = require("./modules/debug.js");
 const { version } = require("../package.json");
 const operatorInfo = require("./modules/operatorInfo.js");
@@ -55,7 +55,7 @@ if (options.operator !== "delete") {
       options.values[0],
       options.values[1]
     );
-    console.log(finalResult);
+    console.table(finalResult);
   } else {
     finalResult = calculate(options.operator, ...options.values);
     console.log(finalResult);
@@ -79,13 +79,8 @@ if (options.operator === "delete") {
     console.log("File deleted successfully");
   });
 }
-if (options.operator !== "delete") {
-fs.appendFile(
-  path,
-  `Answer ${finalResult} using ${options.values} with type ${options.operator}\n`,
-  function (err) {
-    if (err) throw err;
-    console.log("Saved!");
-  }
-);
+if (options.operator !== "delete" || options.operator !== "tax") {
+  savingDataNormal(`Answer is ${finalResult} using ${options.values.join(' & ')} on ${options.operator}\n`);
+} else if (options.operator === "tax") {
+  savingDataNormal(`Answer is ${finalResult} using ${options.values.join(' & ')} on ${options.operator}\n`);
 }

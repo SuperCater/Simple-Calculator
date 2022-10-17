@@ -1,5 +1,6 @@
 const { version } = require("../../package.json");
 const { options } = require("../options.js");
+const fs = require("fs");
 
 // Convert strings to numbers
 const stringToNumber = (str) => {
@@ -80,5 +81,15 @@ const random = (max, values) => {
     console.log(`Operator: ${options.operator}`)
 };
 
+const savingDataNormal = (data) => {
+  const path = "SRC/data/savedCalculations.txt";
+  fs.appendFile(path, data, (err) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+  });
+};
+
 // exports the functions to be used in other files
-module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random };
+module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal };
