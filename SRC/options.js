@@ -7,6 +7,7 @@ const proccess  = require('process')
     commas: true, // Adds commas to the result for easier readability.
     lowercase: true, // Converts the operator to lowercase.
     debugMode: false, // Enables debug mode.
+    conversion: true // Converts symbols to numbers
   },
   secret: {
     aprilFools: false, // Enables April Fools mode.

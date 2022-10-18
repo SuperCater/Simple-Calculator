@@ -26,7 +26,7 @@ This project is a simple calculator that has multiple types of operation such as
   * Delete | Deletes the savedata file
 
 # Saved Data:
-The project has a saved data .txt fil e that can be found in simplecalculator/src/data/savedata.txt. This file is updated everytime the project runs resulting in the ability to refer to the data later on.
+The project has a saved data .txt file that can be found in simplecalculator/src/data/savedata.txt. This file is updated everytime the project runs resulting in the ability to refer to the data later on. Note saving data is diabled on tax operator due to inability to log at the moment.
 ## Values
 type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "remainder", "tax", "square", "circumference", "radius", "squarearea", "circlearea", "random", "delete"]
 ## Options
@@ -34,12 +34,15 @@ type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "
 * commas | Have numbers separated by commas. [true, false]
 * lowercase | Have the operator auto to lowercase. [true, false]
 * debugMode | Shows some debugging information. [true, false]
+* conversion | Converts the sybols to properties to work with the operatorInfo data. [true, false]
 * secret??? | ??? [true, false]
 
 # Contributing
 If you want to contribute to this project, please make a pull request and I will review it.
 
 # Coming Soon
+* Main.js being cleaned up
+* Tax working on writing to file
 * Pulling data from the .txt file
 * Website version
 * Options can be changed with the CLI

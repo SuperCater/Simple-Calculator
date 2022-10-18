@@ -1,1 +1,9 @@
-Answer 20 using 10,10 with type add
+Answer is [object Object] using 10 & 10% on tax
+Answer is [object Object] using 10 & 10% on tax
+Answer is [object Object] using 10 & 10% on tax
+Answer is [object Object] using 10 & 10% on tax
+Answer is 10 using 5 & 5 on add
+Answer is 10 using 5 & 5 on add
+Answer is 10 using 5 & 5 on add
+Answer is 10 using 5 & 5 on add
+Answer is 0.1 using 10 & 10 & 10 on divide

@@ -91,5 +91,25 @@ const savingDataNormal = (data) => {
   });
 };
 
+const symbolConversion = (symbol) => {
+  switch (symbol) {
+    case "+":
+      return "add";
+    case "-":
+      return "subtract";
+    case "*":
+      return "multiply";
+    case "/":
+      return "divide";
+    case "%":
+      return "remainder";
+    case "**":
+      return "exponent";
+    default:
+      return symbol;
+      break;
+  }
+};
+
 // exports the functions to be used in other files
-module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal };
+module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion };
