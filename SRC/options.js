@@ -1,8 +1,8 @@
 const proccess  = require('process')
 
  const options = {
-  operator: proccess.argv[2], // * Valid operators are (you can use the words): [add, +], [subtract, -], [multiply, *], [divide, /], [remainder, %], [exponent, **], [tax], [square], [circumference], [radius], [random], [squareArea], [circleArea]
-  values: proccess.argv.slice(3),
+  // operator: proccess.argv[2], // * Valid operators are (you can use the words): [add, +], [subtract, -], [multiply, *], [divide, /], [remainder, %], [exponent, **], [tax], [square], [circumference], [radius], [random], [squareArea], [circleArea]
+  values: proccess.argv.slice(2),
   advanced: {
     commas: true, // Adds commas to the result for easier readability.
     lowercase: true, // Converts the operator to lowercase.
@@ -13,7 +13,7 @@ const proccess  = require('process')
     aprilFools: false, // Enables April Fools mode.
   },
   experimental: {
-    multipleEquationTypes: false, // Enables multiple equation types. [WIP]
+    multipleEquationTypes: true, // Enables multiple equation types. [WIP]
 },
 };
 

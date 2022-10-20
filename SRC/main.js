@@ -8,8 +8,29 @@ const { mathTypes } = require("./modules/math.js");
 
 stringToNumber(options.values);
 
-if (options.advanced.lowercase) {
-  options.operator = lowerCase(options.operator);
+if (options.advanced.debugMode) {
+  console.log("Values before calculation!");
+  debug(options);
+}
+
+let finalResult;
+if (options.operator !== "delete") {
+  if (options.operator === "tax") {
+    finalResult = calculate(
+      options.operator,
+      options.values[0],
+      options.values[1]
+    );
+    console.table(finalResult);
+  } else {
+    finalResult = parseFloat(calculate(...options.values));
+    console.log(finalResult);
+  }
+}
+
+if (options.advanced.debugMode) {
+  console.log("Values after calculation!");
+  debug(options, version);
 }
 
 if (options.advanced.conversion) {
@@ -29,49 +50,7 @@ if (options.values[0] === "69" && options.values[1] === "420") {
   console.log("Hahaha funny number");
 }
 
-/*
-    TODO: Heavily WIP
- if (process.argv[2] === "change") {
-    changeOptions(process.argv[3], process.argv[4]);
-} */
 
-if (
-  options.values.length > 0 ||
-  operatorInfo[options.operator].maxValues === 0
-) {
-  if (operatorInfo[options.operator].maxValues < options.values.length) {
-    console.warn(
-      "You inputed more values than the calculation requires. The extra values will be ignored."
-    );
-  }
-} else {
-  throw new Error("No values were provided!");
-}
-
-if (options.advanced.debugMode) {
-  console.log("Values before calculation!");
-  debug(options);
-}
-
-let finalResult;
-if (options.operator !== "delete") {
-  if (options.operator === "tax") {
-    finalResult = calculate(
-      options.operator,
-      options.values[0],
-      options.values[1]
-    );
-    console.table(finalResult);
-  } else {
-    finalResult = parseFloat(calculate(options.operator, ...options.values));
-    console.log(finalResult);
-  }
-}
-
-if (options.advanced.debugMode) {
-  console.log("Values after calculation!");
-  debug(options, version);
-}
 
 const fs = require("fs");
 const path = "SRC/data/savedCalculations.txt";

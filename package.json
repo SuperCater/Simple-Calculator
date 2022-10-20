@@ -13,6 +13,7 @@
     "ctest": "node ./SRC/modules/calculate.js",
     "utils": "node ./SRC/modules/utils.js",
     "debug": "node ./SRC/modules/debug.js",
-    "math": "node ./SRC/modules/math.js"
+    "math": "node ./SRC/modules/math.js",
+    "multiple": "node ./SRC/modules/multiple.js"
   }
 }

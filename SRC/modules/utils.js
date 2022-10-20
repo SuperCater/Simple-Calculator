@@ -10,9 +10,13 @@ const fs = require("fs");
 
 const stringToNumber = (str) => {
   for (let i = 0; i < str.length; i++) {
-    if (typeof str[i] === "string" && str[i].includes("%")) {
+    if (typeof str[i] === "string" && str[i].includes("%") && !str[i] === "%") {
       str[i] = str[i].replace("%", "");
       str[i] = str[i] / 100;
+    }
+    if (str[i] === "+" || str[i] === "-" || str[i] === "*" || str[i] === "/" || str[i] === "%" || str[i] === "**") {
+      str[i] === str[i];
+      break;
     }
 
     str[i] = parseFloat(str[i]);

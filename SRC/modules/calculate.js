@@ -4,7 +4,45 @@ const { options } = require("../options.js");
 const { mathTypes } = require("./math");
 const { evaluate } = require("mathjs");
 
+const calculate = (...values) => {
+  // Initializing Variables
+  let result = parseFloat(values[0]);
+  for (let i = 1; i < values.length; i++) {
+    // Checks if the value is an operator
+    if (values[i] === "+" || values[i] === "-" || values[i] === "*" || values[i] === "/" || values[i] === "%" || values[i] === "**") {
+      options.operator = values[i]
+    } else if (typeof values[i] === "number" || typeof values[i] === "string") {
+      parseFloat(values[i])
+      // Does the math
+      switch(options.operator) {
+        case "+":
+          result += parseFloat(values[i])
+          break;
+        case "-":
+          result -= parseFloat(values[i])
+          break;
+        case "*":
+          result *= parseFloat(values[i])
+          break;
+        case "/":
+          result /= parseFloat(values[i])
+          break;
+        case "%":
+          result %= parseFloat(values[i])
+          break;
+        case "**":
+          result **= parseFloat(values[i])
+          break;
+      }
+    } else {
+      console.log("Hmmm. something went wrong. Calculation continued")
+    }
+  }
+  return result
+};
 
+/* 
+ * This is legacy for referencing
 const calculate = (operator, ...values) => {
     values = stringToNumber(values);
     let result = values[0];
@@ -53,7 +91,7 @@ const calculate = (operator, ...values) => {
     } else {
       return result
     }
-};
+}; */
 
 
 
