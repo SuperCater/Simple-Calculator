@@ -36,6 +36,9 @@ type | Type of equation. ["multiply", "divide", "subtract", "add", "exponent", "
 * debugMode | Shows some debugging information. [true, false]
 * conversion | Converts the sybols to properties to work with the operatorInfo data. [true, false]
 * secret??? | ??? [true, false]
+### Experimental
+* multipleEquationTypes | Allows multiple types of equations to be used. [true, false] WIP
+
 
 # Contributing
 If you want to contribute to this project, please make a pull request and I will review it.

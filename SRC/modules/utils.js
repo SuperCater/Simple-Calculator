@@ -3,17 +3,25 @@ const { options } = require("../options.js");
 const fs = require("fs");
 
 // Convert strings to numbers
+// TODO: Convert precents to decimals
+
+
+
+
 const stringToNumber = (str) => {
-  if (typeof str === "object") {
-    // This will cause issues if a regular object is passed and not an array.
-    for (let i = 0; i < str.length; i++) {
-      str[i] = parseFloat(str[i]);
+  for (let i = 0; i < str.length; i++) {
+    if (typeof str[i] === "string" && str[i].includes("%")) {
+      str[i] = str[i].replace("%", "");
+      str[i] = str[i] / 100;
     }
-  } else {
-    str = parseFloat(str);
+
+    str[i] = parseFloat(str[i]);
   }
-  return str;
+  return str
 };
+
+
+
 // lowercase
 const lowerCase = (str) => {
   return str.toLowerCase();

@@ -1,10 +1,12 @@
 const { options } = require("./options.js");
 const { calculate } = require("./modules/calculate.js");
-const { lowerCase, random, savingDataNormal, symbolConversion} = require("./modules/utils.js");
+const { lowerCase, random, savingDataNormal, symbolConversion, stringToNumber} = require("./modules/utils.js");
 const { debug } = require("./modules/debug.js");
 const { version } = require("../package.json");
 const operatorInfo = require("./modules/operatorInfo.js");
 const { mathTypes } = require("./modules/math.js");
+
+stringToNumber(options.values);
 
 if (options.advanced.lowercase) {
   options.operator = lowerCase(options.operator);
@@ -61,7 +63,7 @@ if (options.operator !== "delete") {
     );
     console.table(finalResult);
   } else {
-    finalResult = calculate(options.operator, ...options.values);
+    finalResult = parseFloat(calculate(options.operator, ...options.values));
     console.log(finalResult);
   }
 }
@@ -75,7 +77,7 @@ const fs = require("fs");
 const path = "SRC/data/savedCalculations.txt";
 
 if (options.operator === "delete") {
-  fs.unlink(path, (err) => {
+  fs.unlinkSync(path, (err) => {
     if (err) {
       console.error(err);
       return;
@@ -91,4 +93,6 @@ if (options.operator !== "delete" || options.operator !== "tax") {
   TODO: Fix this 
   savingDataNormal(`Answer is tax table so using special formatting.\nTax amount is ${options.values[0] * options.values[1]}\nTotal amount is ${options.values[0] + options.values[0] * options.values[1]}\n using ${options.values.join(' & ')} on ${options.operator}\n`);
   */ 
+} else {
+  console.warn("No data was saved!");
 }

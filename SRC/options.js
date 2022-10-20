@@ -11,8 +11,11 @@ const proccess  = require('process')
   },
   secret: {
     aprilFools: false, // Enables April Fools mode.
-  }
-};
+  },
+  experimental: {
+    multipleEquationTypes: false, // Enables multiple equation types. [WIP]
+},
+;}
 
 /*
  ! DO NOT USE
