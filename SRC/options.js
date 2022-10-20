@@ -15,7 +15,7 @@ const proccess  = require('process')
   experimental: {
     multipleEquationTypes: false, // Enables multiple equation types. [WIP]
 },
-;}
+};
 
 /*
  ! DO NOT USE
