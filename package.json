@@ -10,7 +10,7 @@
   },
   "scripts": {
     "calculate": "node ./SRC/main.js",
-    "ctest": "node ./SRC/modules/calculate.js",
+    "ctest": "node ./SRC/modules/calculator.js",
     "utils": "node ./SRC/modules/utils.js",
     "debug": "node ./SRC/modules/debug.js",
     "math": "node ./SRC/modules/math.js",
