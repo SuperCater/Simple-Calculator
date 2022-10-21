@@ -1,62 +1,47 @@
-// Importing Modules
-const { stringToNumber, addCommas } = require("./utils");
-const { options } = require("../options.js");
-const { mathTypes } = require("./math");
-const { evaluate } = require("mathjs");
-
-
-const calculate = (operator, ...values) => {
-    values = stringToNumber(values);
-    let result = values[0];
-    switch (operator) {
-      case "add": case '+':
-        result = mathTypes.add(values);
-        break;
-      case "subtract": case '-':
-        result = mathTypes.subtract(values);
-        break;
-      case "multiply": case '*':
-        result = mathTypes.multiply(values);
-        break;
-      case "divide": case '/':
-        result = mathTypes.divide(values);
-        break;
-      case "remainder": case '%':
-        result = mathTypes.remainder(values);
-        break;
-      case "exponent": case '**':
-        console.warn("Be careful as exponents can quickly go above the max supported value!")
-        result = mathTypes.exponent(values);
-        break;
-      case "tax":
-        return mathTypes.taxCalculator(values[0], values[1]);
-      case "square":
-        result = mathTypes.squareMath(values[0]);
-        break;
-      case "circumference":
-        result = mathTypes.circumference(values[0]);
-        break;
-      case "radius":
-        result = mathTypes.radius(values[0]);
-        break;
-      case "circlearea":
-        result = mathTypes.circleArea(values[0]);
-        break;
-      case "squarearea":
-        result = mathTypes.squareArea(values[0]);
-        break;
-      default:
-        return "Invalid operator";
+const calculate = (...cValues) => {
+  // Initalize variables for later
+  let result;
+  let index;
+  // Loop through the array to do all the operations.
+  while (true) {
+    index = cValues.findIndex((value) => value === "**"); // Find exponents first
+    if (index === -1) {
+      index = cValues.findIndex(
+        (value) => value === "*" || value === "/" || value === "%"
+      ); // Finds these second left to right
+      if (index === -1) {
+        index = cValues.findIndex((value) => value === "+" || value === "-"); // find these third left to right
+      }
     }
-    if (options.advanced.commas) {
-      return addCommas(result);
-    } else {
-      return result
+    switch (cValues[index]) {
+      case "*":
+        result = cValues[index - 1] * cValues[index + 1];
+        break;
+      case "/":
+        result = cValues[index - 1] / cValues[index + 1];
+        break;
+      case "%":
+        result = cValues[index - 1] % cValues[index + 1];
+        break;
+      case "+":
+        result = cValues[index - 1] + cValues[index + 1];
+        break;
+      case "-":
+        result = cValues[index - 1] - cValues[index + 1];
+        break;
+    case "**":
+        result = cValues[index - 1] ** cValues[index + 1];
+        break;
     }
+
+    cValues.splice(index - 1, 1); // Removes first value
+    cValues.splice(index, 1); // Removes second value
+    cValues[index - 1] = result;
+    if (cValues.length === 1) {
+      break;
+    }
+  }
+  return parseFloat(cValues);
 };
-
-
-
-
 
 module.exports.calculate = calculate;

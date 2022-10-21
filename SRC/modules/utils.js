@@ -10,26 +10,48 @@ const fs = require("fs");
 
 const stringToNumber = (str) => {
   for (let i = 0; i < str.length; i++) {
-    if (typeof str[i] === "string" && str[i].includes("%")) {
+    if (typeof str[i] === "string" && str[i].includes("%") && !str[i] === "%") {
       str[i] = str[i].replace("%", "");
       str[i] = str[i] / 100;
     }
-
-    str[i] = parseFloat(str[i]);
+    if (str[i] === "+" || str[i] === "-" || str[i] === "*" || str[i] === "/" || str[i] === "%" || str[i] === "**") {
+      str[i] === str[i];
+    } else {
+      str[i] = parseFloat(str[i]);
+    }
   }
   return str
 };
-
-
-
-// lowercase
-const lowerCase = (str) => {
-  return str.toLowerCase();
-};
-
-// Add commas to a number
 const addCommas = (num) => {
   return num.toLocaleString();
+};
+
+const errorChecker = (values) => {
+  if (values.length < 2) {
+    console.log("You need at least two values to calculate!");
+    process.exit();
+  }
+  for (let i = 0; i < values.length; i++) {
+    if (typeof values[i] === "string") {
+      if (!values[i] === "+" || !values[i] === "-" || !values[i] === "*" || !values[i] === "/" || !values[i] === "%" || !values[i] === "**") {
+        console.error("Error: Invalid operator or value!");
+        process.exit(1)
+      }
+    } 
+  }
+}
+
+const stringToArray = (...str) => {
+  if (str.length === 1) {
+    str = str[0].split("");
+  }
+  return str
+}
+
+// lowercase
+// LEGACY: A lot of these utility funtions are no longer used and probably won't work with the code. I'm keeping them here for now just in case I need them later.
+const lowerCase = (str) => {
+  return str.toLowerCase();
 };
 
 const getInfo = () => {
@@ -119,5 +141,15 @@ const symbolConversion = (symbol) => {
   }
 };
 
+const checkIndex = (values, ...check) => {
+  let index
+  index = values.findIndex((value) => {
+    value === check[0] || value === check[1]
+  })
+  return index
+}
+
+
+
 // exports the functions to be used in other files
-module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion };
+module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion, checkIndex, errorChecker, stringToArray };
