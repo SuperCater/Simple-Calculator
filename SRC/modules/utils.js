@@ -1,5 +1,6 @@
 const { version } = require("../../package.json");
 const { options } = require("../options.js");
+const { advancedTypes } = require("../options.js");
 const fs = require("fs");
 
 // Convert strings to numbers
@@ -46,6 +47,16 @@ const stringToArray = (...str) => {
     str = str[0].split("");
   }
   return str
+}
+
+const checkIfType = (...values) => {
+  if (typeof values[0] === "string") {
+    values[0] === values[0].toLowerCase()
+    if (values[0] === "tax" || values[0] === "square" || values[0] === "circumference" || values[0] === "radius" || values[0] === "circlearea" || values[0] === "squarearea") {
+      return true
+    }
+  }
+  return false
 }
 
 // lowercase
@@ -152,4 +163,4 @@ const checkIndex = (values, ...check) => {
 
 
 // exports the functions to be used in other files
-module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion, checkIndex, errorChecker, stringToArray };
+module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion, checkIndex, errorChecker, stringToArray, checkIfType };
