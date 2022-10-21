@@ -1,6 +1,6 @@
 {
   "name": "simplecalculator",
-  "version": "1.7.3",
+  "version": "2.0.0",
   "description": "A simple calculator",
   "main": "SRC/main.js",
   "dependencies": {
@@ -10,10 +10,12 @@
   },
   "scripts": {
     "calculate": "node ./SRC/main.js",
-    "ctest": "node ./SRC/modules/calculator.js",
+    "ctest": "node ./SRC/modules/calculate.js",
     "utils": "node ./SRC/modules/utils.js",
     "debug": "node ./SRC/modules/debug.js",
     "math": "node ./SRC/modules/math.js",
-    "multiple": "node ./SRC/modules/multiple.js"
+    "multiple": "node ./SRC/modules/multiple.js",
+    "test": "node ./test.js",
+    "nctest": "node ./SRC/modules/calculator.js"
   }
 }

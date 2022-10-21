@@ -16,24 +16,21 @@ const stringToNumber = (str) => {
     }
     if (str[i] === "+" || str[i] === "-" || str[i] === "*" || str[i] === "/" || str[i] === "%" || str[i] === "**") {
       str[i] === str[i];
-      break;
+    } else {
+      str[i] = parseFloat(str[i]);
     }
-
-    str[i] = parseFloat(str[i]);
   }
   return str
 };
-
+const addCommas = (num) => {
+  return num.toLocaleString();
+};
 
 
 // lowercase
+// LEGACY: A lot of these utility funtions are no longer used and probably won't work with the code. I'm keeping them here for now just in case I need them later.
 const lowerCase = (str) => {
   return str.toLowerCase();
-};
-
-// Add commas to a number
-const addCommas = (num) => {
-  return num.toLocaleString();
 };
 
 const getInfo = () => {
@@ -123,5 +120,15 @@ const symbolConversion = (symbol) => {
   }
 };
 
+const checkIndex = (values, ...check) => {
+  let index
+  index = values.findIndex((value) => {
+    value === check[0] || value === check[1]
+  })
+  return index
+}
+
+
+
 // exports the functions to be used in other files
-module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion };
+module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion, checkIndex };
