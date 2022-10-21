@@ -1,3 +1,6 @@
+# IMPORTANT
+The code here is legacy. It was the version of the calculator before 2.0 which completley rewrote the calculator module to respect order of operations which caused the loss of many types of calculations. It is still supported on this branch for people whow ant to use it. Do not expect any future updates to it.
+
 # Simple-Calculator
 A simple calculator that can use multiple types of operations and accepts infinite values (or well till the program runs out of memory)
 
