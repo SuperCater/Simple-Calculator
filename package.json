@@ -4,11 +4,11 @@
   "description": "A simple calculator",
   "main": "SRC/main.js",
   "dependencies": {
-    "mathjs": "^11.3.0",
     "node": "^18.10.0",
     "node.js": "^0.0.1-security"
   },
   "scripts": {
+    "c": "node ./SRC/main.js",
     "calculate": "node ./SRC/main.js",
     "ctest": "node ./SRC/modules/calculate.js",
     "utils": "node ./SRC/modules/utils.js",

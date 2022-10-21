@@ -26,6 +26,27 @@ const addCommas = (num) => {
   return num.toLocaleString();
 };
 
+const errorChecker = (values) => {
+  if (values.length < 2) {
+    console.log("You need at least two values to calculate!");
+    process.exit();
+  }
+  for (let i = 0; i < values.length; i++) {
+    if (typeof values[i] === "string") {
+      if (!values[i] === "+" || !values[i] === "-" || !values[i] === "*" || !values[i] === "/" || !values[i] === "%" || !values[i] === "**") {
+        console.error("Error: Invalid operator or value!");
+        process.exit(1)
+      }
+    } 
+  }
+}
+
+const stringToArray = (...str) => {
+  if (str.length === 1) {
+    str = str[0].split("");
+  }
+  return str
+}
 
 // lowercase
 // LEGACY: A lot of these utility funtions are no longer used and probably won't work with the code. I'm keeping them here for now just in case I need them later.
@@ -131,4 +152,4 @@ const checkIndex = (values, ...check) => {
 
 
 // exports the functions to be used in other files
-module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion, checkIndex };
+module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion, checkIndex, errorChecker, stringToArray };
