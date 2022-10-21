@@ -45,6 +45,7 @@ const errorChecker = (values) => {
 const stringToArray = (...str) => {
   if (str.length === 1) {
     str = str[0].split("");
+    console.warn("If you put a ** in the calculalor you will be stuck in an infite loop. Please precc ctrl + c")
   }
   return str
 }
