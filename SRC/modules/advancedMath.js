@@ -20,6 +20,7 @@ const mathTypes = {
   // Finds the circumference of a circle.
   circumference(radius) {
     let cfResult = 2 * Math.PI * radius;
+    console.log(cfResult);
     return cfResult;
   },
   // Finds the radius of a circle.

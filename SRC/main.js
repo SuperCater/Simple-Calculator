@@ -4,7 +4,7 @@ const { stringToNumber, addCommas, errorChecker, stringToArray, checkIfType } = 
 const { advancedCalculator } = require ('./modules/otherCalculate')
 
 if (checkIfType(...options.values)) {
-    options.type = options.values[0];
+    options.type = options.values[0].toLowerCase();
     options.values.shift();
     options.usingType = true;
 }

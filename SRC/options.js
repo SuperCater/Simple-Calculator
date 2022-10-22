@@ -1,7 +1,8 @@
 const options = {
   values: process.argv.slice(2),
   commas: true,
-  type: "", // THIS ISN'T THE SAME AS THE OLD OPERATOR OR TYPE. DO NOT INPUT "ADD" OR ANY OTHER OTHER OPERATOR!
+  // * Note, these values are automatically changed by the program, no need to manually do it.
+  type: "",
   usingType: false,
 }
 

@@ -7,7 +7,7 @@ A simple calculator that can use multiple types of operations and accepts infini
 2. Change directory to SimpleCalculator
 3. type npm run calculate [calculation] // example "npm run calculate 5 + 5 + 2 - 3" // would output 9
 4. If you want to access options go to simplecalculator/src/options.js and change the options to true or false.
-5. If the calculation is taking too long press ctrl + c to stop the program. Most likely you 
+5. If the calculation is taking too long press ctrl + c to stop the program. Most likely you caused an infite loop. Make sure your operation inputed is supported and it's all lowercase.
 
 # Operations:
 This project is a simple calculator that has multiple types of operation such as:
@@ -17,6 +17,14 @@ This project is a simple calculator that has multiple types of operation such as
   * Division
   * Exponential
   * Remainder
+  ## Only one of these can be used at a time and must be put as your first input.
+  * Tax | Calculates tax and returns a table [amount, taxrate]
+  * Square | Returns the square root of a number [numToSquare]
+  * Circumference | Returns the circumference of a circle [radius]
+  * Radius | Returns the radius of a circle [circumference]
+  * CircleArea | Returns the area of a circle [radius]
+  * squareArea | Returns the area of a square [side]
+
 
 # Saved Data:
 This was removed in the 2.0 release. It will come back soon.

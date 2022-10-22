@@ -2,6 +2,7 @@ const { version } = require("../../package.json");
 const { options } = require("../options.js");
 const { advancedTypes } = require("../options.js");
 const fs = require("fs");
+const { parseArgs } = require("util");
 
 // Convert strings to numbers
 // TODO: Convert precents to decimals
@@ -28,7 +29,7 @@ const addCommas = (num) => {
 };
 
 const errorChecker = (values) => {
-  if (values.length < 2) {
+  if (values.length < 2 && options.usingType === false) {
     console.log("You need at least two values to calculate!");
     process.exit();
   }
@@ -43,12 +44,14 @@ const errorChecker = (values) => {
 }
 
 const stringToArray = (...str) => {
-  if (str.length === 1) {
+  if (str.length === 1 && options.usingType === false) {
     str = str[0].split("");
     console.warn("If you put a ** in the calculalor you will be stuck in an infite loop. Please precc ctrl + c")
   }
   return str
 }
+
+// convert a string to an array
 
 const checkIfType = (...values) => {
   if (typeof values[0] === "string") {
