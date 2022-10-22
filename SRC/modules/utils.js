@@ -34,7 +34,7 @@ const addCommas = (num) => {
 
 const errorChecker = (values) => {
   if (values.length < 2 && options.usingType === false) {
-    console.log("You need at least two values to calculate!");
+    console.log("You need at least two values to calculate!, make sure you seperate each value with a space!");
     process.exit();
   }
   for (let i = 0; i < values.length; i++) {
