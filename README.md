@@ -30,7 +30,6 @@ This project is a simple calculator that has multiple types of operation such as
 ## Saved Data:
 Any calculation you run will be stored in simpleCalculator/SRC/data/savedCalculations.txt
 The file will be created whenever you run the calculator the first time.
-
 ## Options
 * commas | Have numbers separated by commas. [true, false]
 

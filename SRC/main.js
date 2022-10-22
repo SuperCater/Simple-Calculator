@@ -15,11 +15,12 @@ if (checkIfType(...options.values)) {
   options.values.shift();
   options.usingType = true;
 }
-
+/*
+! Disabled till fixed
 if (options.values.length === 1 && options.usingType === false) {
     console.log(stringToArray(options.values[0]));
     options.values = stringToArray(options.values[0]);
-}
+} */
 
 if (options.type !== "delete") {
     options.values = stringToNumber(options.values);

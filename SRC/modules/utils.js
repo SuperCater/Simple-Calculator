@@ -54,6 +54,7 @@ const errorChecker = (values) => {
   }
 };
 
+// ! Being fixed
 const stringToArray = (str) => {
   let splitStr = []
   for (let i = 0; i < str.length; i++) {
@@ -76,6 +77,14 @@ const stringToArray = (str) => {
     }
   }
   return splitStr;
+}
+
+// ! IN DEVELOPMENT
+const stringToArray2 = (str) => {
+  stringSep = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === 5) {}
+}
 }
 
 // convert a string to an array
