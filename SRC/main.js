@@ -15,29 +15,51 @@ if (checkIfType(...options.values)) {
   options.values.shift();
   options.usingType = true;
 }
+
 if (options.values.length === 1 && options.usingType === false) {
     console.log(stringToArray(options.values[0]));
     options.values = stringToArray(options.values[0]);
 }
-options.values = stringToNumber(options.values);
 
-let result;
+if (options.type !== "delete") {
+    options.values = stringToNumber(options.values);
+}
 
 errorChecker(options.values);
-if (!options.usingType) {
-  result = calculate(...options.values);
-} else {
-  result = advancedCalculator(options.type, options.values);
+
+if (options.type !== "delete") {
+    if (!options.usingType) {
+        result = calculate(...options.values);
+    } else {
+        result = advancedCalculator(options.type, options.values);
+    }
 }
 
-if (options.commas && result >= 1000) {
-  result = addCommas(result);
+if (options.type !== "delete") {
+    if (options.commas && result >= 1000) {
+        result = addCommas(result);
+    }
 }
 
-if (options.type === "tax") {
-  console.table(result);
-} else {
-  console.log(result);
+if (options.type !== "delete") {
+    if (options.type === "tax") {
+        console.table(result);
+    } else {
+        console.log(result);
+    }
+}
+
+const fs = require("fs");
+const path = "SRC/data/savedCalculations.txt";
+
+if (options.type === "delete") {
+  fs.unlinkSync(path, (err) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log("File deleted successfully");
+  });
 }
 
 if (

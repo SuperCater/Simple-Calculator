@@ -24,7 +24,7 @@ This project is a simple calculator that has multiple types of operation such as
   * Radius | Returns the radius of a circle [circumference]
   * CircleArea | Returns the area of a circle [radius]
   * squareArea | Returns the area of a square [side]
-  * delete | WIP
+  * delete | Deletes your saveddata
 
 
 ## Saved Data:

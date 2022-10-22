@@ -89,7 +89,8 @@ const checkIfType = (...values) => {
       values[0] === "circumference" ||
       values[0] === "radius" ||
       values[0] === "circlearea" ||
-      values[0] === "squarearea"
+      values[0] === "squarearea" ||
+      values[0] === "delete"
     ) {
       return true;
     }
