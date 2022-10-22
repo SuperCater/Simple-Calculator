@@ -4,6 +4,9 @@ const options = {
   // * Note, these values are automatically changed by the program, no need to manually do it.
   type: "",
   usingType: false,
+  advanced: {
+    loopLimit: 500,
+  }
 }
 
 // exports options

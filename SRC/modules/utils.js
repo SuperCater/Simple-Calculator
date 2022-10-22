@@ -7,22 +7,26 @@ const { parseArgs } = require("util");
 // Convert strings to numbers
 // TODO: Convert precents to decimals
 
-
-
-
 const stringToNumber = (str) => {
   for (let i = 0; i < str.length; i++) {
     if (typeof str[i] === "string" && str[i].includes("%") && !str[i] === "%") {
       str[i] = str[i].replace("%", "");
       str[i] = str[i] / 100;
     }
-    if (str[i] === "+" || str[i] === "-" || str[i] === "*" || str[i] === "/" || str[i] === "%" || str[i] === "**") {
+    if (
+      str[i] === "+" ||
+      str[i] === "-" ||
+      str[i] === "*" ||
+      str[i] === "/" ||
+      str[i] === "%" ||
+      str[i] === "**"
+    ) {
       str[i] === str[i];
     } else {
       str[i] = parseFloat(str[i]);
     }
   }
-  return str
+  return str;
 };
 const addCommas = (num) => {
   return num.toLocaleString();
@@ -35,33 +39,63 @@ const errorChecker = (values) => {
   }
   for (let i = 0; i < values.length; i++) {
     if (typeof values[i] === "string") {
-      if (!values[i] === "+" || !values[i] === "-" || !values[i] === "*" || !values[i] === "/" || !values[i] === "%" || !values[i] === "**") {
+      if (
+        !values[i] === "+" ||
+        !values[i] === "-" ||
+        !values[i] === "*" ||
+        !values[i] === "/" ||
+        !values[i] === "%" ||
+        !values[i] === "**"
+      ) {
         console.error("Error: Invalid operator or value!");
-        process.exit(1)
+        process.exit(1);
       }
-    } 
+    }
   }
-}
+};
 
-const stringToArray = (...str) => {
-  if (str.length === 1 && options.usingType === false) {
-    str = str[0].split("");
-    console.warn("If you put a ** in the calculalor you will be stuck in an infite loop. Please precc ctrl + c")
+const stringToArray = (str) => {
+  let splitStr = []
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "+" || str[i] === "-" || str[i] === "*" || str[i] === "/" || str[i] === "%" || str[i] === "*") {
+      if (str[i] === "*" && str[i + 1] === "*") {
+        splitStr.push(str[i] + str[i + 1]);
+        i++;
+      } else {
+        splitStr.push(str[i])
+      }
+      } else {
+      if (str[i] !== "+" || str[i] !== "-" || str[i] !== "*" || str[i] !== "/" || str[i] !== "%" || str[i] !== "**") {
+        if (str[i + 1] === "+" || str[i + 1] === "-" || str[i + 1] === "*" || str[i + 1] === "/" || str[i + 1] === "%" || str[i+1] === undefined) {
+          splitStr.push(str[i])
+        } else {
+          splitStr.push(str[i] + str[i + 1]);
+          i++;
+        }
+      } 
+    }
   }
-  return str
+  return splitStr;
 }
 
 // convert a string to an array
 
 const checkIfType = (...values) => {
   if (typeof values[0] === "string") {
-    values[0] === values[0].toLowerCase()
-    if (values[0] === "tax" || values[0] === "square" || values[0] === "circumference" || values[0] === "radius" || values[0] === "circlearea" || values[0] === "squarearea") {
-      return true
+    values[0] === values[0].toLowerCase();
+    if (
+      values[0] === "tax" ||
+      values[0] === "square" ||
+      values[0] === "circumference" ||
+      values[0] === "radius" ||
+      values[0] === "circlearea" ||
+      values[0] === "squarearea"
+    ) {
+      return true;
     }
   }
-  return false
-}
+  return false;
+};
 
 // lowercase
 // LEGACY: A lot of these utility funtions are no longer used and probably won't work with the code. I'm keeping them here for now just in case I need them later.
@@ -76,54 +110,56 @@ const getInfo = () => {
 };
 
 const random = (max, values) => {
-   for(let i = 0; i < values; i++) {
-        options.values[i] = Math.floor(Math.random() * max);
-        console.log(`Value ${i + 1}: ${options.values[i]}`)
-    }
-    let randomNum = Math.floor(Math.random() * 12);
+  for (let i = 0; i < values; i++) {
+    options.values[i] = Math.floor(Math.random() * max);
+    console.log(`Value ${i + 1}: ${options.values[i]}`);
+  }
+  let randomNum = Math.floor(Math.random() * 12);
 
-    switch(randomNum) {
-        case 0:
-          options.operator = "add";
-          break;
-        case 1:
-          options.operator = "subtract";
-          break;
-        case 2:
-          options.operator = "multiply";
-          break;
-        case 3:
-          options.operator = "divide";
-          break;
-        case 4:
-          options.operator = "remainder";
-          break;
-        case 5:
-          options.operator = "exponent";
-          break;
-        case 6:
-          options.operator = "tax";
-          break;
-        case 7:
-          options.operator = "square";
-          break;
-        case 8:
-          options.operator = "circumference";
-          break;
-        case 9:
-          options.operator = "radius";
-          break;
-        case 10:
-          options.operator = "circlearea";
-          break;
-        case 11:
-          options.operator = "squarearea";
-          break;
-        default:
-          console.log("Something went wrong! Defaulting operator type to addition!");
-          options.operator = "add";
-    }
-    console.log(`Operator: ${options.operator}`)
+  switch (randomNum) {
+    case 0:
+      options.operator = "add";
+      break;
+    case 1:
+      options.operator = "subtract";
+      break;
+    case 2:
+      options.operator = "multiply";
+      break;
+    case 3:
+      options.operator = "divide";
+      break;
+    case 4:
+      options.operator = "remainder";
+      break;
+    case 5:
+      options.operator = "exponent";
+      break;
+    case 6:
+      options.operator = "tax";
+      break;
+    case 7:
+      options.operator = "square";
+      break;
+    case 8:
+      options.operator = "circumference";
+      break;
+    case 9:
+      options.operator = "radius";
+      break;
+    case 10:
+      options.operator = "circlearea";
+      break;
+    case 11:
+      options.operator = "squarearea";
+      break;
+    default:
+      console.log(
+        "Something went wrong! Defaulting operator type to addition!"
+      );
+      options.operator = "add";
+  }
+  console.log(`Operator: ${options.operator}`);
 };
 
 const savingDataNormal = (data) => {
@@ -157,14 +193,24 @@ const symbolConversion = (symbol) => {
 };
 
 const checkIndex = (values, ...check) => {
-  let index
+  let index;
   index = values.findIndex((value) => {
-    value === check[0] || value === check[1]
-  })
-  return index
-}
-
-
+    value === check[0] || value === check[1];
+  });
+  return index;
+};
 
 // exports the functions to be used in other files
-module.exports = { stringToNumber, addCommas, lowerCase, getInfo, random, savingDataNormal, symbolConversion, checkIndex, errorChecker, stringToArray, checkIfType };
+module.exports = {
+  stringToNumber,
+  addCommas,
+  lowerCase,
+  getInfo,
+  random,
+  savingDataNormal,
+  symbolConversion,
+  checkIndex,
+  errorChecker,
+  stringToArray,
+  checkIfType,
+};

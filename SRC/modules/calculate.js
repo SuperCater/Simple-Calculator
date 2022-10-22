@@ -1,9 +1,12 @@
+const { options } = require("../options.js");
 const calculate = (...cValues) => {
   // Initalize variables for later
   let result;
   let index;
   // Loop through the array to do all the operations.
-  while (true) {
+  let i = 0;
+  while (i < options.advanced.loopLimit) {
+    i++
     index = cValues.findIndex((value) => value === "**"); // Find exponents first
     if (index === -1) {
       index = cValues.findIndex(
