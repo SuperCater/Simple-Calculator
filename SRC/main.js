@@ -10,11 +10,19 @@ const {
 } = require("./modules/utils");
 const { advancedCalculator } = require("./modules/otherCalculate");
 
-if (checkIfType(...options.values)) {
+let newArray = []
+for (let i = 0; i < options.values.length; i++) {
+  newArray.push(options.values[i])
+}
+
+options.values = newArray
+
+// LEGACY Function
+/* if (checkIfType(...options.values)) {
   options.type = options.values[0].toLowerCase();
   options.values.shift();
   options.usingType = true;
-}
+} */
 /*
 ! Disabled till fixed
 if (options.values.length === 1 && options.usingType === false) {
