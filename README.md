@@ -43,3 +43,19 @@ SaveData deleting
 ## Dependencies
 * Node.JS
 * NPM
+
+## What I learned
+This project was mainly used as a learning tool and was my first real JavaScript project. I originally started building this because I was bored in school but it has evolved into my favorite learning tool. This project has taught me more than I expected. I learned a lot about all of the following.
+
+* Loops
+* Functions
+* Scopes
+* Arrays
+* Labels
+* Modules
+* Objects
+* Structuring
+* Git
+* GitHub
+
+This program I know has barely any real world use but it's really fun to build so I highly recommend you do something simillar. Make sure it's achievable and that you can do it on your own. I learned my fundamentals of JavaScript from [CodeCademy](https://www.codecademy.com/learn/introduction-to-javascript) to learn the basics.

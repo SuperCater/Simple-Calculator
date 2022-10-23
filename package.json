@@ -4,8 +4,7 @@
   "description": "A simple calculator",
   "main": "SRC/main.js",
   "dependencies": {
-    "node": "^18.10.0",
-    "node.js": "^0.0.1-security"
+    "node": "^18.10.0"
   },
   "scripts": {
     "c": "node ./SRC/main.js",
