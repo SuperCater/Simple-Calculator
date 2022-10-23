@@ -5,9 +5,10 @@ A simple calculator that can use multiple types of operations and accepts infini
 0. Install Node.js [here](https://nodejs.org/en/) // Both should work!
 1. Open your chosen command prompt
 2. Change directory to SimpleCalculator
-3. type npm run calculate [calculation] // example "npm run calculate 5 + 5 + 2 - 3" // would output 9
-4. If you want to access options go to simplecalculator/src/options.js and change the options to true or false.
-5. If the calculation is taking too long press ctrl + c to stop the program. Most likely you caused an infite loop. Make sure your operation inputed is supported and it's all lowercase.
+3. Run npm run calculate (or npm run c)
+4. Answer the questions the command line gives you.
+5. If you want to access options go to simplecalculator/src/options.js and change the options to true or false.
+6. If the calculation is taking too long press ctrl + c to stop the program. Most likely you caused an infite loop. Make sure your operation inputed is supported and it's all lowercase.
 
 ## Operations:
 This project is a simple calculator that has multiple types of operation such as:
