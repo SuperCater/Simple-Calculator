@@ -10,13 +10,6 @@ const {
 } = require("./modules/utils");
 const { advancedCalculator } = require("./modules/otherCalculate");
 
-let newArray = []
-for (let i = 0; i < options.values.length; i++) {
-  newArray.push(options.values[i])
-}
-
-options.values = newArray
-
 // LEGACY Function
 /* if (checkIfType(...options.values)) {
   options.type = options.values[0].toLowerCase();
