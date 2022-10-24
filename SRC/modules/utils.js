@@ -4,6 +4,30 @@ const { advancedTypes } = require("../options.js");
 const fs = require("fs");
 const { parseArgs } = require("util");
 
+// Convert strings to numbers
+// TODO: Convert precents to decimals
+
+const stringToNumber = (str) => {
+  for (let i = 0; i < str.length; i++) {
+    if (typeof str[i] === "string" && str[i].includes("%") && !str[i] === "%") {
+      str[i] = str[i].replace("%", "");
+      str[i] = str[i] / 100;
+    }
+    if (
+      str[i] === "+" ||
+      str[i] === "-" ||
+      str[i] === "*" ||
+      str[i] === "/" ||
+      str[i] === "%" ||
+      str[i] === "**"
+    ) {
+      str[i] === str[i];
+    } else {
+      str[i] = parseFloat(str[i]);
+    }
+  }
+  return str;
+};
 
 const addCommas = (num) => {
   return num.toLocaleString();
@@ -31,7 +55,7 @@ const errorChecker = (values) => {
   }
 };
 
-// * Needs to be updated
+
 const random = (max, values) => {
   for (let i = 0; i < values; i++) {
     options.values[i] = Math.floor(Math.random() * max);
@@ -97,6 +121,7 @@ const savingDataNormal = (data) => {
 
 // exports the functions to be used in other files
 module.exports = {
+  stringToNumber,
   addCommas,
   errorChecker,
   random,
