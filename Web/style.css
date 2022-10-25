@@ -5,3 +5,7 @@
 .bigFont {
     font-size: 1.5em;
 }
+
+#author {
+    text-align: bottom;
+}
