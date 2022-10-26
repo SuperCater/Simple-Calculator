@@ -5,7 +5,7 @@ const fs = require("fs");
 const { parseArgs } = require("util");
 
 // Convert strings to numbers
-// TODO: Convert precents to decimals
+// TODO: Convert percents to decimals
 
 const stringToNumber = (str) => {
   for (let i = 0; i < str.length; i++) {

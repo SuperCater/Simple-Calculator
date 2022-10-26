@@ -7,8 +7,6 @@ const {
   stringToNumber,
   addCommas,
   errorChecker,
-  stringToArray,
-  checkIfType,
   savingDataNormal,
 } = require("./modules/utils");
 const { advancedCalculator } = require("./modules/otherCalculate");
@@ -31,7 +29,7 @@ if (options.type !== "delete") {
 }
 
 errorChecker(options.values);
-
+let result
 if (options.type !== "delete") {
     if (!options.usingType) {
         result = calculate(...options.values);
@@ -58,13 +56,8 @@ const fs = require("fs");
 const path = "SRC/data/savedCalculations.txt";
 
 if (options.type === "delete") {
-  fs.unlinkSync(path, (err) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log("File deleted successfully");
-  });
+    fs.unlinkSync(path);
+    console.log("Deleted all saved calculations");
 }
 
 if (

@@ -47,4 +47,4 @@ const calculate = (...cValues) => {
   return parseFloat(cValues);
 };
 
-module.exports.calculate = calculate;
+module.exports = { calculate }
