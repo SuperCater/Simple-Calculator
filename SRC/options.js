@@ -22,6 +22,9 @@ if (readline.keyInYN("Are you using a type?")) {
         break;
       } else {
         console.log("That is not a valid type! Please try again.");
+        if (readline.keyInYN("Would you like to see a list of accepted types?")) {
+          console.table(acceptedTypes);
+        }
       }
   }
   switch (options.type) {
