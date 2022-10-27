@@ -11,7 +11,7 @@ const options = {
   }
 }
 
-const acceptedTypes = ["tax", "srt", "square", "circumference", "radius", "circlearea", "squarearea"];
+const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea"];
 
 if (readline.keyInYN("Are you using a type?")) {
     options.usingType = true;
