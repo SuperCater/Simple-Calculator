@@ -16,6 +16,7 @@ if (process.argv[2] === "dev") {
   console.log("Developer mode enabled for this calculator session")
   options.devMode = true;
 }
+const acceptedTypes = ["tax", "srt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug"];
 
 const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea", "delete"];
 
@@ -57,6 +58,15 @@ if (readline.keyInYN("Are you using a type?")) {
       options.values[0] = readline.question('Enter the length of the side of the square. ')
     case "delete":
       console.log("Initializing delete function...")
+      break;
+    case "slope":
+      options.values[0] = readline.question('Enter the x value of the first point. ')
+      options.values[1] = readline.question('Enter the y value of the first point. ')
+      options.values[2] = readline.question('Enter the x value of the second point. ')
+      options.values[3] = readline.question('Enter the y value of the second point. ')
+      break;
+    case "delete":
+      console.log("Intializng delete function...");
     default:
       console.log("Error, something has gone wrong! Exiting process please try again. ")
   }

@@ -11,9 +11,8 @@ const advancedCalculator = (type, values) => {
             return mathTypes.taxCalculator(values[0], values[1]);
         case "sqrt":
             return mathTypes.squareMath(values[0]);
-        case "square": {
+        case "square":
             return values[0] ** 2;
-        }
         case "circumference":
             return mathTypes.circumference(values[0]);
         case "radius":
@@ -22,6 +21,10 @@ const advancedCalculator = (type, values) => {
             return mathTypes.circleArea(values[0]);
         case "squarearea":
             return mathTypes.squareArea(values[0]);
+        case "slope":
+            return mathTypes.slope(values[0], values[1], values[2], values[3]);
+        default:
+            console.log("Something has gone wrong!")
     }
 }
 module.exports = { advancedCalculator, advancedType }

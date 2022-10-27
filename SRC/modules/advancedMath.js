@@ -36,6 +36,20 @@ const mathTypes = {
     let saResult = side ** 2;
     return saResult;
   },
+  slope(x1, y1, x2, y2) {
+    let sResult = (y2 - y1) / (x2 - x1);
+    return sResult;
+  },
+  slopeIntercept(m, x, num) {
+    let result;
+    if (typeof x === "undefined") {
+      if (typeof num !== "undefined") {
+        for (let i = 0; i < num; i++) {
+          console.log("This is in testing!");
+        }
+      }
+    }
+  },
 };
 
 module.exports = { mathTypes };
