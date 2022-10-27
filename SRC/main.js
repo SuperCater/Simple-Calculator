@@ -1,3 +1,6 @@
+// * This is the main file, it will require all the modules needed and uses them here. This file is also probably the messiest file so if you could clean up that would be great :3
+
+
 const { options } = require("./options.js");
 const { calculate } = require("./modules/calculate");
 const {

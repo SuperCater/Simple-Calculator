@@ -17,7 +17,7 @@ if (process.argv[2] === "dev") {
   options.devMode = true;
 }
 
-const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea"];
+const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea", "delete"];
 
 if (readline.keyInYN("Are you using a type?")) {
     options.usingType = true;
@@ -55,7 +55,8 @@ if (readline.keyInYN("Are you using a type?")) {
       break;
     case "squarearea":
       options.values[0] = readline.question('Enter the length of the side of the square. ')
-      break;
+    case "delete":
+      console.log("Initializing delete function...")
     default:
       console.log("Error, something has gone wrong! Exiting process please try again. ")
   }
