@@ -9,8 +9,11 @@ const advancedCalculator = (type, values) => {
             break;
         case "tax":
             return mathTypes.taxCalculator(values[0], values[1]);
-        case "square":
+        case "sqrt":
             return mathTypes.squareMath(values[0]);
+        case "square": {
+            return values[0] ** 2;
+        }
         case "circumference":
             return mathTypes.circumference(values[0]);
         case "radius":

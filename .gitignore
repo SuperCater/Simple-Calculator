@@ -1,3 +1,5 @@
-/node_modules
+/.gitattributes
+/jsconfig.json
 /package-lock.json
 /SRC/data/savedCalculations.txt
+/node_modules
