@@ -8,7 +8,13 @@ const options = {
   usingType: false,
   advanced: {
     loopLimit: 500,
+    devMode: false
   }
+}
+
+if (process.argv[2] === "dev") {
+  console.log("Developer mode enabled for this calculator session")
+  options.devMode = true;
 }
 
 const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea"];
