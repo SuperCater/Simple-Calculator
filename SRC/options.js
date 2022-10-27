@@ -1,7 +1,7 @@
 const readline = require('readline-sync');
 
 const options = {
-  values: 0,
+  values: [],
   commas: true,
   // * Note, these values are automatically changed by the program, no need to manually do it.
   type: "",
@@ -11,14 +11,48 @@ const options = {
   }
 }
 
+const acceptedTypes = ["tax", "srt", "square", "circumference", "radius", "circlearea", "squarearea"];
+
 if (readline.keyInYN("Are you using a type?")) {
     options.usingType = true;
-    options.type = readline.question("What type are you using? ");
-    options.values = readline.question('Enter your values to use the type. Check the readme for information on each type! Make sure values are seperated by spaces!: ').split(' ')
+    while (true) {
+      options.type = readline.question("What type are you using? ");
+      options.type = options.type.toLowerCase();
+      if (acceptedTypes.includes(options.type)) {
+        break;
+      } else {
+        console.log("That is not a valid type! Please try again.");
+      }
+  }
+  switch (options.type) {
+    case "tax":
+      options.values[0] = readline.question('Enter the total amount of the purchase without tax. ')
+      options.values[1] = readline.question('Enter the tax rate. ')
+      break;
+    case "sqrt":
+      options.values[0] = readline.question('Enter the number you want to square root. ')
+      break;
+    case "square":
+      options.values[0] = readline.question('Enter the number you want to square. ')
+      break;
+    case "circumference":
+      options.values[0] = readline.question('Enter the radius of the circle. ')
+      break;
+    case "radius":
+      options.values[0] = readline.question('Enter the circumference of the circle. ')
+      break;
+    case "circlearea":
+      options.values[0] = readline.question('Enter the radius of the circle. ')
+      break;
+    case "squarearea":
+      options.values[0] = readline.question('Enter the length of the side of the square. ')
+      break;
+    default:
+      console.log("Error, something has gone wrong! Exiting process please try again. ")
+  }
 } else {
   options.values = readline.question('Enter your equation. Make sure each valus is seperated with a space!: ').split(' ')
 }
-
 
 // exports options
 module.exports = { options };
