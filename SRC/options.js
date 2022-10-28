@@ -18,8 +18,6 @@ if (process.argv[2] === "dev") {
 }
 const acceptedTypes = ["tax", "srt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug"];
 
-const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea", "delete"];
-
 if (readline.keyInYN("Are you using a type?")) {
     options.usingType = true;
     while (true) {
@@ -73,6 +71,7 @@ if (readline.keyInYN("Are you using a type?")) {
 } else {
   options.values = readline.question('Enter your equation. Make sure each valus is seperated with a space!: ').split(' ')
 }
+
 
 // exports options
 module.exports = { options };
