@@ -27,3 +27,11 @@ footer {
 .author {
   color:orange
 }
+
+.calculator {
+  /* Center calculator */
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  size: 20px;
+}

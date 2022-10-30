@@ -50,6 +50,10 @@ const mathTypes = {
       }
     }
   },
+  interest(loan, rate) {
+    let result = loan * rate;
+    return result;
+  }
 };
 
 module.exports = { mathTypes };

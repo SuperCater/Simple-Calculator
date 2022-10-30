@@ -16,7 +16,7 @@ if (process.argv[2] === "dev") {
   console.log("Developer mode enabled for this calculator session")
   options.devMode = true;
 }
-const acceptedTypes = ["tax", "srt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug"];
+const acceptedTypes = ["tax", "srt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug", "interest"];
 
 if (readline.keyInYN("Are you using a type?")) {
     options.usingType = true;
@@ -62,6 +62,10 @@ if (readline.keyInYN("Are you using a type?")) {
       options.values[1] = readline.question('Enter the y value of the first point. ')
       options.values[2] = readline.question('Enter the x value of the second point. ')
       options.values[3] = readline.question('Enter the y value of the second point. ')
+      break;
+    case "interest":
+      options.values[0] = readline.question('Enter the principal amount. ')
+      options.values[1] = readline.question('Enter the interest rate. ')
       break;
     case "delete":
       console.log("Intializng delete function...");
