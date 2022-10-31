@@ -1,4 +1,5 @@
 const readline = require('readline-sync');
+const { devPrint } = require('./modules/devprint.js');
 
 const options = {
   values: [],
@@ -9,7 +10,6 @@ const options = {
   advanced: {
     loopLimit: 500,
     devMode: false,
-    variableTest: false,
   }
 }
 
@@ -17,9 +17,10 @@ if (process.argv[2] === "dev") {
   console.log("Developer mode enabled for this calculator session")
   options.devMode = true;
 }
+
 const acceptedTypes = ["tax", "srt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug", "interest"];
 
-if (readline.keyInYN("Are you using a type?")) {
+if (readline.keyInYNStrict("Are you using a type?")) {
     options.usingType = true;
     while (true) {
       options.type = readline.question("What type are you using? ");
@@ -76,7 +77,7 @@ if (readline.keyInYN("Are you using a type?")) {
 } else {
   options.values = readline.question('Enter your equation. Make sure each valus is seperated with a space!: ').split(' ')
   if (/a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z/.test(options.values)) {
-    console.log(`Enter the values for your equation. Equation: ${options.values.join(' ')}`)
+    console.log(`Enter the values for your variables. Equation: ${options.values.join(' ')}`)
     let variable;
     let newVariable;
     while (/a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z/.test(options.values)) {
