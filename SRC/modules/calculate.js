@@ -10,10 +10,10 @@ const calculate = (...cValues) => {
     index = cValues.findIndex((value) => value === "**"); // Find exponents first
     if (index === -1) {
       index = cValues.findIndex(
-        (value) => value === "*" || value === "/" || value === "%"
-      ); // Finds these second left to right
+        (value) => value === "*" || value === "/" || value === "%" // Finds multiplication, division, and modulus left to right
+      );
       if (index === -1) {
-        index = cValues.findIndex((value) => value === "+" || value === "-"); // find these third left to right
+        index = cValues.findIndex((value) => value === "+" || value === "-"); // finds addition and subtraction left to right
       }
     }
     switch (cValues[index]) {

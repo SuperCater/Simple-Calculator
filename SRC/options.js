@@ -8,7 +8,8 @@ const options = {
   usingType: false,
   advanced: {
     loopLimit: 500,
-    devMode: false
+    devMode: false,
+    variableTest: false,
   }
 }
 
@@ -74,6 +75,16 @@ if (readline.keyInYN("Are you using a type?")) {
   }
 } else {
   options.values = readline.question('Enter your equation. Make sure each valus is seperated with a space!: ').split(' ')
+  if (/a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z/.test(options.values)) {
+    console.log(`Enter the values for your equation. Equation: ${options.values.join(' ')}`)
+    let variable;
+    let newVariable;
+    while (/a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z/.test(options.values)) {
+      variable = options.values.findIndex((value) => value === "a" || value === "b" || value === "c" || value === "d" || value === "e" || value === "f" || value === "g" || value === "h" || value === "i" || value === "j" || value === "k" || value === "l" || value === "m" || value === "n" || value === "o" || value === "p" || value === "q" || value === "r" || value === "s" || value === "t" || value === "u" || value === "v" || value === "w" || value === "x" || value === "y" || value === "z");
+      newVariable = readline.question(`Enter the value for ${options.values[variable]}. `);
+      options.values[variable] = newVariable;
+    }
+  }
 }
 
 
