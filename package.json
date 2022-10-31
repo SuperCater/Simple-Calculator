@@ -1,6 +1,6 @@
 {
   "name": "simplecalculator",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "description": "A simple calculator",
   "main": "SRC/main.js",
   "dependencies": {
