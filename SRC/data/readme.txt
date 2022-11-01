@@ -1,0 +1,1 @@
+Hi there. This folder contains the savedCalculations file. This file contains all of your calculations in a .txt format. If you don't see the file run the calculator and you should see it.
