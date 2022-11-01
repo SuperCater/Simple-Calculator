@@ -3,13 +3,17 @@ const { options } = require("../options.js");
 const { advancedTypes } = require("../options.js");
 const fs = require("fs");
 const { parseArgs } = require("util");
+const { devPrint } = require("./devprint.js");
 
 // Convert strings to numbers
 // TODO: Convert percents to decimals
 
 const stringToNumber = (str) => {
+  devPrint("StringToNumber input: " + str);
   for (let i = 0; i < str.length; i++) {
-    if (typeof str[i] === "string" && str[i].includes("%") && !str[i] === "%") {
+    devPrint("StringToNumber loop: " + str[i]);
+    if (str[i] !== "%" && str[i].includes("%")) {
+      devPrint("Percentage Converter ran")
       str[i] = str[i].replace("%", "");
       str[i] = str[i] / 100;
     }
