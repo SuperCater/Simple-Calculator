@@ -18,7 +18,7 @@ if (process.argv[2] === "dev") {
   options.devMode = true;
 }
 
-const acceptedTypes = ["tax", "srt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug", "interest"];
+const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug", "interest"];
 
 if (readline.keyInYNStrict("Are you using a type?")) {
     options.usingType = true;
