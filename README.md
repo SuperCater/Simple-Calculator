@@ -59,5 +59,6 @@ This project was mainly used as a learning tool and was my first real JavaScript
 * Structuring
 * Git
 * GitHub
+* Regex (way simpler than most people make it out to be.)
 
 This program I know has barely any real world use but it's really fun to build so I highly recommend you do something simillar. Make sure it's achievable and that you can do it on your own. I learned my fundamentals of JavaScript from [CodeCademy](https://www.codecademy.com/learn/introduction-to-javascript) to learn the basics.

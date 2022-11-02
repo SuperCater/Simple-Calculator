@@ -25,6 +25,8 @@ const advancedCalculator = (type, values) => {
             return mathTypes.slope(values[0], values[1], values[2], values[3]);
         case "interest":
             return mathTypes.interest(values[0], values[1]);
+        case "length":
+            return values[0].length;
         default:
             console.log("Something has gone wrong!")
     }

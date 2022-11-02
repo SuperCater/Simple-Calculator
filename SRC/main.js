@@ -23,7 +23,7 @@ if (options.values.length === 1 && options.usingType === false) {
     options.values = stringToArray(options.values[0]);
 } */
 
-if (options.type !== "delete") {
+if (options.type !== "delete" && options.type !== "length") {
     devPrint(options.values);
     options.values = stringToNumber(options.values);
 }

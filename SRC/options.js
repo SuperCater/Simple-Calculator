@@ -18,7 +18,7 @@ if (process.argv[2] === "dev") {
   options.devMode = true;
 }
 
-const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug", "interest"];
+const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug", "interest", "length"];
 
 if (readline.keyInYNStrict("Are you using a type?")) {
     options.usingType = true;
@@ -69,10 +69,15 @@ if (readline.keyInYNStrict("Are you using a type?")) {
       options.values[0] = readline.question('Enter the principal amount. ')
       options.values[1] = readline.question('Enter the interest rate. ')
       break;
+    case "length":
+      options.values[0] = readline.question('Enter the text you want the length of. ')
+      break;
     case "delete":
       console.log("Intializng delete function...");
+      break;
     default:
       console.log("Error, something has gone wrong! Exiting process please try again. ")
+      break;
   }
 } else {
   options.values = readline.question('Enter your equation. Make sure each valus is seperated with a space!: ').split(' ')
