@@ -45,7 +45,7 @@ if (options.type !== "delete") {
 }
 
 if (options.type !== "delete") {
-    if (options.type === "tax") {
+    if (options.type === "tax" || options.type === "slopeintercept") {
         console.table(result);
     } else {
         console.log(result);

@@ -18,13 +18,16 @@ This project is a simple calculator that has multiple types of operation such as
   * Division
   * Exponential
   * Remainder
-  ## Only one of these can be used at a time and must be put as your first input.
+## Only one of these can be used at a time and must be put as your first input.
   * Tax | Calculates tax and returns a table [amount, taxrate]
   * Square | Returns the square root of a number [numToSquare]
   * Circumference | Returns the circumference of a circle [radius]
   * Radius | Returns the radius of a circle [circumference]
   * CircleArea | Returns the area of a circle [radius]
   * squareArea | Returns the area of a square [side]
+  * slope | Returns the slope of a line [x1, y1, x2, y2]
+  * slopeIntercept | Returns the slope intercept of a line [x, y intercept, num]
+  * interest | Returns the interest of a loan [principal, rate] WIP
   * delete | Deletes your saveddata
 
 

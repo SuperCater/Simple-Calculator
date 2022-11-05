@@ -23,12 +23,15 @@ const advancedCalculator = (type, values) => {
             return mathTypes.squareArea(values[0]);
         case "slope":
             return mathTypes.slope(values[0], values[1], values[2], values[3]);
+        case "slopeintercept":
+            return mathTypes.slopeIntercept(values[0], values[1], values[2]);
         case "interest":
             return mathTypes.interest(values[0], values[1]);
         case "length":
             return values[0].length;
         default:
             console.log("Something has gone wrong!")
+            process.exit(2)
     }
 }
 module.exports = { advancedCalculator, advancedType }

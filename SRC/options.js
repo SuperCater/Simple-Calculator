@@ -18,7 +18,7 @@ if (process.argv[2] === "dev") {
   options.devMode = true;
 }
 
-const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug", "interest", "length"];
+const acceptedTypes = ["tax", "sqrt", "square", "circumference", "radius", "circlearea", "squarearea", "slope", "delete", "debug", "interest", "length", "slopeintercept"];
 
 if (readline.keyInYNStrict("Are you using a type?")) {
     options.usingType = true;
@@ -71,6 +71,11 @@ if (readline.keyInYNStrict("Are you using a type?")) {
       break;
     case "length":
       options.values[0] = readline.question('Enter the text you want the length of. ')
+      break;
+    case "slopeintercept":
+      options.values[0] = readline.question('Enter the slope of the line. ')
+      options.values[1] = readline.question('Enter the y-intercept of the line. ')
+      options.values[2] = readline.question('Enter how many values you want. ')
       break;
     case "delete":
       console.log("Intializng delete function...");

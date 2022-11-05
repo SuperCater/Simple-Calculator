@@ -40,15 +40,12 @@ const mathTypes = {
     let sResult = (y2 - y1) / (x2 - x1);
     return sResult;
   },
-  slopeIntercept(m, x, num) {
-    let result;
-    if (typeof x === "undefined") {
-      if (typeof num !== "undefined") {
-        for (let i = 0; i < num; i++) {
-          console.log("This is in testing!");
-        }
-      }
+  slopeIntercept(m, y, num) {
+    let result = []
+    for (let i = 0; i < num; i++) {
+      result.push(y + (m * i))
     }
+    return result
   },
   interest(loan, rate) {
     let result = loan * rate;
