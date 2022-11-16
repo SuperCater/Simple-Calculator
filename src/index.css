@@ -5,3 +5,11 @@ body {
   max-width: 38rem;
   padding: 2rem;
 }
+
+.buttons {
+  /* Make a 5 by 4 grid; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
