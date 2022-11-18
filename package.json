@@ -1,7 +1,7 @@
 {
   "name": "simplecalculatore",
   "productName": "simplecalculatore",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "@electron-forge/maker-rpm": "^6.0.3",
     "@electron-forge/maker-squirrel": "^6.0.3",
     "@electron-forge/maker-zip": "^6.0.3",
+    "@electron-forge/publisher-github": "^6.0.3",
     "electron": "21.2.3"
   }
 }

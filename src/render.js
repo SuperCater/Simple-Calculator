@@ -2,151 +2,70 @@
 // Import the calculate module with ES6 syntax
 import { calculate } from "./modules/calculate.js";
 let equation = [];
-const test = false
-
+let input;
+let test = false;
 // Get equation from document
-const dEquation = document.getElementById('equation');
+const dEquation = document.getElementById("equation");
 // Getting operators
-const addButton = document.getElementById('add');
-const subtractButton = document.getElementById('subtract');
-const multiply = document.getElementById('multiply');
-const divide = document.getElementById('divide');
-const exponent = document.getElementById('exponent');
-const submit = document.getElementById('submit');
+const addButton = document.getElementById("add");
+const subtractButton = document.getElementById("subtract");
+const multiply = document.getElementById("multiply");
+const divide = document.getElementById("divide");
+const exponent = document.getElementById("exponent");
+const submit = document.getElementById("submit");
 // Getting numbers
-const one = document.getElementById('one');
-const two = document.getElementById('two');
-const three = document.getElementById('three');
-const four = document.getElementById('four');
-const five = document.getElementById('five');
-const six = document.getElementById('six');
-const seven = document.getElementById('seven');
-const eight = document.getElementById('eight');
-const nine = document.getElementById('nine');
-const zero = document.getElementById('zero');
+const one = document.getElementById("one");
+const two = document.getElementById("two");
+const three = document.getElementById("three");
+const four = document.getElementById("four");
+const five = document.getElementById("five");
+const six = document.getElementById("six");
+const seven = document.getElementById("seven");
+const eight = document.getElementById("eight");
+const nine = document.getElementById("nine");
+const zero = document.getElementById("zero");
 // Should work hopefully
-const buttons = document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', () => {
-        if (test && button.className === 'operator') {
-            equation = []
-        }
-    })
-})
+const dot = document.getElementById("dot");
+const clear = document.getElementById("clear");
 
-// Operator Handlers
-
-addButton.onclick = function() {
-    equation.push('+');
+// check if any of the buttons with the class of operator are clicked
+document.querySelectorAll(".operator").forEach((item) => {
+  item.addEventListener("click", (event) => {
     console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
+    equation.push(input)
+    input = event.target.value;
+    equation.push(input);
+    dEquation.innerHTML = equation.join("");
+    input = "";
+  });
+});
+
+clear.onclick = () => {
+  equation = []
+  input = ""
+  dEquation.innerHTML = equation.join("");
 }
 
-subtractButton.onclick = function() {
-    equation.push('-');
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-multiply.onclick = function() {
-    equation.push('*');
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-divide.onclick = function() {
-    equation.push('/');
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-exponent.onclick = function() {
-    equation.push('**');
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
+document.querySelectorAll(".numbers").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    console.log(input)
+    if (!input) {
+      input = parseFloat(event.target.value);
+      test = true
+    } else {
+    input += parseFloat(event.target.value)
+    }
+    dEquation.innerHTML = equation + input;
+  });
+});
 
 
-
-one.onclick = function() {
-    equation.push(1);
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-two.onclick = function() {
-    equation.push(2);
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-three.onclick = function() {
-    equation.push(3);
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-four.onclick = function() {
-    equation.push(4);
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-five.onclick = function() {
-    equation.push(5);
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-six.onclick = function() {
-    equation.push(6);
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-seven.onclick = function() {
-    equation.push(7);
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-eight.onclick = function() {
-    equation.push(8);
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-nine.onclick = function() {
-    equation.push(9);
-    console.log(equation);
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-zero.onclick = function() {
-    equation.push(0);
-    console.log(equation)
-    // Change the text to the equation variable
-    dEquation.innerHTML = equation;
-}
-
-submit.onclick = function() {
-    // Calculate the equation
-    console.log(equation);
-    equation = calculate(...equation);
-    console.log(equation);
-    dEquation.innerHTML = equation;
-    equation = [equation];
-}
+submit.onclick = function () {
+  // Calculate the equation
+  equation.push(input)
+  console.log(equation);
+  equation = calculate(...equation);
+  console.log(equation);
+  dEquation.innerHTML = equation;
+  equation = []
+};
