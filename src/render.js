@@ -4,26 +4,9 @@ import { calculate } from "./modules/calculate.js";
 let equation = [];
 let input;
 let test = false;
-// Get equation from document
 const dEquation = document.getElementById("equation");
-// Getting operators
-const addButton = document.getElementById("add");
-const subtractButton = document.getElementById("subtract");
-const multiply = document.getElementById("multiply");
-const divide = document.getElementById("divide");
-const exponent = document.getElementById("exponent");
 const submit = document.getElementById("submit");
 // Getting numbers
-const one = document.getElementById("one");
-const two = document.getElementById("two");
-const three = document.getElementById("three");
-const four = document.getElementById("four");
-const five = document.getElementById("five");
-const six = document.getElementById("six");
-const seven = document.getElementById("seven");
-const eight = document.getElementById("eight");
-const nine = document.getElementById("nine");
-const zero = document.getElementById("zero");
 // Should work hopefully
 const dot = document.getElementById("dot");
 const clear = document.getElementById("clear");
