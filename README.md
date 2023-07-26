@@ -1,5 +1,5 @@
 # Simple-Calculator
-A simple calculator that can use multiple types of operations and accepts infinite values (or well till the program runs out of memory)
+A simple calculator that can use multiple types of operations and accepts infinite values (or until the program runs out of memory)
 
 # How to run:
 0. Install Node.js [here](https://nodejs.org/en/) // Both should work!
@@ -27,8 +27,8 @@ This project is a simple calculator that has multiple types of operation such as
   * squareArea | Returns the area of a square [side]
   * slope | Returns the slope of a line [x1, y1, x2, y2]
   * slopeIntercept | Returns the slope intercept of a line [x, y intercept, num]
-  * interest | Returns the interest of a loan [principal, rate] WIP
-  * delete | Deletes your saveddata
+  * interest | Returns the interest of a loan [principal, rate] - WIP
+  * delete | Deletes your saved data
 
 
 ## Saved Data:
@@ -42,7 +42,7 @@ If you want to contribute to this project, please make a pull request and I will
 
 ## Coming Soon
 
-SaveData deleting
+* SaveData deleting
 
 ## Dependencies
 * Node.JS
@@ -62,6 +62,6 @@ This project was mainly used as a learning tool and was my first real JavaScript
 * Structuring
 * Git
 * GitHub
-* Regex (way simpler than most people make it out to be.)
+* Regex (Way simpler than most people make it out to be.)
 
 This program I know has barely any real world use but it's really fun to build so I highly recommend you do something simillar. Make sure it's achievable and that you can do it on your own. I learned my fundamentals of JavaScript from [CodeCademy](https://www.codecademy.com/learn/introduction-to-javascript) to learn the basics.
