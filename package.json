@@ -9,6 +9,8 @@
   },
   "type": "module",
   "scripts": {
-	"start": "node ."
+	"start": "node .",
+	"build": "tsc",
+	"sb": "npm run build && npm run start"
   }
 }
