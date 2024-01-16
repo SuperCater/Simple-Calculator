@@ -68,6 +68,7 @@ const calculate = (expression : string) => {
 			return subtraction;
 		} else return acc;
 	});
+	if (isNaN(finalResult)) throw new Error("Invalid expression");
 	return finalResult;
 }
 

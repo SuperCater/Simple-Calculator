@@ -3,14 +3,13 @@
   "version": "2.5.0",
   "description": "A simple calculator",
   "main": "./dist/main.js",
-  "dependencies": {
-    "node": "^18.10.0",
-    "readline-sync": "^1.4.10"
-  },
   "type": "module",
   "scripts": {
-	"start": "node .",
-	"build": "tsc",
-	"sb": "npm run build && npm run start"
+    "start": "node .",
+    "build": "tsc",
+    "sb": "npm run build && npm run start"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.3"
   }
 }
