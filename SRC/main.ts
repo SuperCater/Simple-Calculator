@@ -2,7 +2,7 @@
 
 import calculate from "./modules/calculate.js";
 
-const expression = "(55+5)*(2+3)";
+const expression = "2^2+5";
 
 
 console.log(calculate(expression));

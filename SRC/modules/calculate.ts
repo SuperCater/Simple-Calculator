@@ -3,7 +3,7 @@ const calculate = (expression : string) => {
 	// Expression would look like: (55+5)*2 and should return 120 (NOT 65)
 	// Split it so it becomes ["(", "55", "+", "5", ")", "*", "2"]
 	
-	const splitExpression : any[] = expression.split(/(\+|\-|\*|\/|\(|\))/g).filter((element) => element !== "");
+	const splitExpression : any[] = expression.split(/(\+|\-|\*|\/|\(|\)|\^)/g).filter((element) => element !== "");
 	for (const i in splitExpression) {
 		// Convert all numbers from string to number
 		if (!isNaN(Number(splitExpression[i]))) {
@@ -22,6 +22,16 @@ const calculate = (expression : string) => {
 			const result = calculate(sliced.join(""));
 			// Remove the parentheses and replace it with the result
 			arr.splice(i, index - i + 1, result);
+		}
+	});
+	
+	// Loop through the array and calculate exponentiation first (using ^)
+	splitExpression.forEach((element, i, arr) => {
+		if (element === "^") {
+			// If the current element is "^" then calculate the exponentiation
+			// and remove the previous and next element from the array
+			const exponentiation = Math.pow(arr[i - 1], arr[i + 1]);
+			arr.splice(i - 1, 3, exponentiation);
 		}
 	});
 	
